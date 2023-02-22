@@ -1,0 +1,85 @@
+despues de la reunion del 25/01/2023 con javier y eduardo : 
+
+--> Lunes 30 de enero : 
+
+* gamma_SP/gamma_0 : el factor es muy alto : 
+	
+	- hacer un overleaf aparte para ver bien la formula ---> ver cual es el Gamma0 al que Javier se estaba refiriendo . done
+	
+	- graficar por separado en python: 
+		- graphene. done 
+		- silver. 
+		- hBN 
+
+despues de la reunion del 31/01/2023 con javier y eduardo : 
+
+--> Martes 31 de enero : 
+
+	 - el Gamma0 al que Javier se estaba refiriendo para normalizar Gamma_SP es un poco diferente al del paper 149 
+	 	- grafeno. done (hay que agregar el momento dipolar directo) 
+		- silver. done (hay que agregar el momento dipolar directo) 
+		- hBN. done  (hay que agregar el momento dipolar directo) 
+		
+		---> Graficar grafeno vs silver . done
+		
+	
+		
+	- hacer la presentacion 
+		
+--> Mierc 1 de enero : 
+
+	- deadline 44th PIERS : abstract de 1 pagina  (similar to Cleo)  https://piers.org/piers2023Prague/submit/submit_new.php
+
+        - invertir colores del grafico de infinitos dipolos (mostrar a eduardo) 
+	    - https://www.geeksforgeeks.org/visualizing-the-bivariate-gaussian-distribution-in-python/
+        
+        - poner las figuras en el reporte. 
+	
+--> Jueves 2 de feb : homeoffice : 
+	- ir a la comisaria (pedir empadronamiento) + hacer lo de Digi de nuevo 
+
+--> Viernes 3 de feb: 
+        - 9.30 cita en sabadell cerca de icfo 
+		
+	***** codigos .py **************************
+	*plot_comparar_EELS_paper_149: comparar la formula de Gamma_EELS del paper 149 con la de javier aproximada (con la cual esta funcionando el decay rate)  
+	*EELS_film_ana_f_div_gamma0_v2 : normalizar con la formula aproximada
+	*EELS_film_ana_f_div_gamma0_v3 : normalizar el decay rate con el paper 149
+	***** codigos .py **************************
+	
+	- comparar la formula de Gamma_EELS del paper 149 con la de javier aproximada (con la cual esta funcionando el decay rate) 
+		- grafeno . da del orden 10^{-1} entonces la formula del paper 149 tiene que funcionar ---> funciona !
+	
+	- normalizar con la formula del paper 149 (eq 11 del overleaf "decay rate too high") 
+		- grafeno. done 
+		- silver . done 
+		- hBN . done 
+		- hBN disks . done 
+	
+
+	- normalizar decay rate de inf dipoles con el paper 149: 
+		- grafeno. done . da 10^{-2} mas chico que 1 dipolo
+		- silver : da 10^{-2} mas chico que 1 dipolo
+		- hBN : da 10^{-3} mas chico que 1 dipolo
+		- hBN disks :
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---> Martes 7/02: 
+
+* hBN disks : no se separan los picos . preparar una presentacion al respecto . 
+
+* Compararla funcion Gamma_{SPN, n} - Gamma_{SPN, n+1} para hBN disks y para hBN 
+
+
+
+
+
+
+
+
+
+
