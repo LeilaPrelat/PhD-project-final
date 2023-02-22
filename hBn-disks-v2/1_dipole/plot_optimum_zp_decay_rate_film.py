@@ -20,8 +20,8 @@ from scipy.signal import find_peaks
 #%%
 
 
-create_data = 0
-load_data = 1
+create_data = 1
+load_data = 0
 
 #%%
 
@@ -34,10 +34,10 @@ if not os.path.exists(path_save):
     print('Creating folder to save graphs')
     os.mkdir(path_save)
 
-err = 'decay_rate_film3.py no se encuentra en ' + path_basic
+err = 'decay_rate_film.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_film_resonance import EELS_film_ana_f, EELS_film_pole_aprox_f
+    from decay_rate_film import EELS_film_ana_f_div_gamma0
 except ModuleNotFoundError:
     print(err)
 
@@ -169,7 +169,7 @@ def function_imag_ana(energy0): ## devuelve el zp optimo en nanometros
 #    else:
 #        listx = np.linspace(200,600,100)
     N = 400
-    N = 350
+    N = 400
 #    if d_nano_film == 1:    
 ##        if energy0 <= 0.187:
 ##            listx = np.linspace(300,700,N) # segundo intervalo
@@ -192,12 +192,12 @@ def function_imag_ana(energy0): ## devuelve el zp optimo en nanometros
         list_zp_nano = np.linspace(0.001,3.5,N)
     else:
         list_zp_nano = np.linspace(1,10,N)#         
-        list_zp_nano = np.linspace(2,11,N) # mas preciso          
+        list_zp_nano = np.linspace(0.5,20,N) # mas preciso          
         
     listy = []
     for zp_nano in list_zp_nano:
         zp = zp_nano*1e-3
-        rta = EELS_film_pole_aprox_f(omegac0,epsilon_Silica, d_nano_film, d_thickness_disk_nano, D_disk_nano,int_v,b,zp)
+        rta = EELS_film_ana_f_div_gamma0(omegac0,epsilon_Silica, d_nano_film, d_thickness_disk_nano, D_disk_nano,int_v,b,zp)
         listy.append(rta)
 #    print(energy0,v_sobre_c)
         
@@ -221,17 +221,10 @@ def function_imag_ana(energy0): ## devuelve el zp optimo en nanometros
    
     return float(maxi)
 
-
-    
-#%%    
-    
-
-
-
 #%%
     
 labelx = r'Plasmon energy $\hbar\omega$ (eV)'
-labely = r'optimal $z_p$ [nm]'
+labely = r'optimum $z_0$ (nm)'
     
 tamfig = [2.5, 2]
 tamletra = 9
@@ -275,13 +268,13 @@ if create_data == 1:
     plt.legend(loc = 'best',markerscale=mk,fontsize=tamlegend,frameon=0.1,handletextpad=0.2, handlelength=length_marker)
     plt.tight_layout()
     os.chdir(path_save)
-    plt.savefig( 'zp_optimum_for_decay_rate_hBN_disks_resonance' + labelp + '.png', format='png', dpi=dpi)  
+    plt.savefig( 'zp_optimum_for_decay_rate_hBN_disks' + labelp + '.png', format='png', dpi=dpi)  
     
     
     tabla = np.array([listx,listy,list_lambda_p])
     tabla = np.transpose(tabla)
     header1 = 'E [eV]     zp [nm]     Re(lambda_p) [nm]' + ', ' + title + ', ' + name_this_py
-    np.savetxt('zp_optimum_for_decay_rate_hBN_disks_resonance' + labelp + '.txt', tabla, fmt='%1.11e', delimiter='\t', header = header1)
+    np.savetxt('zp_optimum_for_decay_rate_hBN_disks' + labelp + '.txt', tabla, fmt='%1.11e', delimiter='\t', header = header1)
 
 #%%
 #
@@ -289,7 +282,7 @@ if load_data == 1:
 
     from scipy.signal import savgol_filter
     os.chdir(path_save)
-    tabla = np.loadtxt('zp_optimum_for_decay_rate_hBN_disks_resonance' + labelp + '.txt', delimiter='\t', skiprows=1)
+    tabla = np.loadtxt('zp_optimum_for_decay_rate_hBN_disks' + labelp + '.txt', delimiter='\t', skiprows=1)
     tabla = np.transpose(tabla)
     [listx,listy,list_lambda_p] = tabla
     
@@ -328,7 +321,7 @@ if load_data == 1:
     plt.tight_layout()
     os.chdir(path_save)
     
-    plt.savefig( 'zp_optimum_for_decay_rate_hBN_disks_resonance' + labelp + '.png',bbox_inches='tight',pad_inches = 0.01, format='png', dpi=dpi)  
+    plt.savefig( 'zp_optimum_for_decay_rate_hBN_disks' + labelp + '.png',bbox_inches='tight',pad_inches = 0.01, format='png', dpi=dpi)  
 
 #
 #    graph(title,labelx,labely,tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)

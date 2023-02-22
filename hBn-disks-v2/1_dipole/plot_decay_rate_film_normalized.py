@@ -34,10 +34,10 @@ if not os.path.exists(path_save):
     print('Creating folder to save graphs')
     os.mkdir(path_save)
 
-err = 'decay_rate_film3.py no se encuentra en ' + path_basic
+err = 'decay_rate_film.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_film_resonance import EELS_film_ana_f_div_gamma0,EELS_film_ana_f_div_gamma0_v3
+    from decay_rate_film import EELS_film_ana_f_div_gamma0
 except ModuleNotFoundError:
     print(err)
 try:
@@ -66,14 +66,6 @@ aux2 = 1e12/c
 
 print('Definir parametros del problema')
 
-#v = c/int_v
-#omega = 0.7*1e12
-
-#v = c/int_v
-#omega = 0.7*1e12
-
-#v = c/int_v
-
 epsi1 = 1
 zp = 0.05
 b = -0.01
@@ -92,35 +84,33 @@ labelp = r'_res_dfilm%.2fnm_ddisk%.2fnm_D%inm' %(d_nano_film,d_thickness_disk_na
 N = 350
 
 
-
 def function_imag_ana(energy0,int_v,zp_nano):
     omegac0 = energy0/aux 
     zp = zp_nano*1e-3
 
-    rta1 = EELS_film_ana_f_div_gamma0_v3(omegac0,epsilon_Silica, d_nano_film, d_thickness_disk_nano, D_disk_nano,int_v,b,zp)
+    rta1 = EELS_film_ana_f_div_gamma0(omegac0,epsilon_Silica, d_nano_film, d_thickness_disk_nano, D_disk_nano,int_v,b,zp)
 #    rta2 = EELS_dir_ana_f(omegac0,epsi1,epsi2,hbmu,hbgama,int_v,b,zp)
     
 #    print(rta1)
     return rta1
 #
-#def function_imag_ana(energy0,int_v,zp_nano):
-#    omegac0 = energy0*1e-3/aux 
-#    zp = zp_nano*1e-3
-#
-#    rta = EELS_film_ana_f(omegac0,epsi1,epsi2,hbmu,hbgama,int_v,b,zp)
-#    
-#    return rta
-
-
-#def function_parallel_ana(energy0,int_v,zp_nano):
-#    omegac0 = energy0*1e-3/aux 
-#    zp = zp_nano*1e-3 
-#    rta = EELS_parallel_ana_f(omegac0,epsi1,epsi2,hbmu,hbgama,L_nano,int_v,b,zp)
-#    
-#    return rta    
-    
 
 def lambda_p(energy0):
+    
+    epsi_x = epsilon_x(energy0)
+    epsi_HBN_par = epsi_x     
+    
+    omegac = energy0/aux
+    
+    d_micro = d_nano_film*1e-3
+    alfa_p = epsilon_Silica(energy0)*2/(omegac*d_micro*(1 - epsi_HBN_par))
+    kp = alfa_p*omegac
+      
+
+    return (2*np.pi/kp)*1e3 ## en micro
+
+
+def lambda_p_v2(energy0):
     
 #    d_micros = d_nano*1e-3
     lambda_p_v = hBn_lambda_p(energy0,epsilon_Silica(energy0),epsilon_Silica(energy0))*d_nano_film
@@ -128,28 +118,13 @@ def lambda_p(energy0):
     return lambda_p_v ## en nano
 
 
-def lambda_p_v2(energy0): ## creo que esta no tiene mucho que ver 
-    
-    epsi_x = epsilon_x(energy0)
-    epsi_HBN_par = epsi_x
-    epsi_silica = epsilon_Silica(energy0)        
-    
-    omegac = energy0/aux
-#    d_micros = d_nano*1e-3
-    d_micro = d_nano_film*1e-3
-    alfa_p = epsi_silica*2/(omegac*d_micro*(epsi_HBN_par-1))
-    kp = alfa_p*omegac
-      
-
-    return (2*np.pi/kp)*1e3 ## en micro
-
 if plot_vs_c == 1 :
     E0 = 44 # meV
     # z0 = 0.06*1e3
     zp0 = 0.05*1e3 
     
     labelx = r'v/c'   
-    title4 = title4 + ', ' + r'$\hbar\omega$ = %i meV, $z_p$ = %i nm' %(E0,zp0)
+    title4 = title4 + ', ' + r'$\hbar\omega$ = %i meV, $z_0$ = %i nm' %(E0,zp0)
     label1 = 'vs_v' + labelp
 #    listx = np.linspace(0.0001,2,N)
     listx = np.linspace(0.005,0.12,N)
@@ -160,7 +135,7 @@ if plot_vs_E ==1 :
     zp0 = 0.05*1e3 
     
     labelx = r'$\hbar\omega$ [eV]'   
-    title4 = title4 + ', ' + r'v = c/%i, $z_p$ = %i nm' %(int_v0,zp0)
+    title4 = title4 + ', ' + r'v = c/%i, $z_0$ = %i nm' %(int_v0,zp0)
     label1 = 'vs_E' + labelp
 #    listx = np.linspace(0.0001,2,N)
     listx = np.linspace(15,65,N)
