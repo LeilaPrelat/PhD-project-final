@@ -21,8 +21,8 @@ from scipy.signal import find_peaks
 
 paper = 1
 primer_intervalo = 0
-create_data = 1
-load_data = 0
+create_data = 0
+load_data = 1
 
 #%%
 
@@ -221,7 +221,7 @@ if load_data == 1:
 
     from scipy.signal import savgol_filter
     os.chdir(path_save)
-    tabla = np.loadtxt('zp_optimum_for_decay_rate_hBn_d%inm.txt'%(d_nano), delimiter='\t', skiprows=1)
+    tabla = np.loadtxt('zp_optimum_for_decay_rate_resonance_d%inm_v%i.txt'%(d_nano,int_v), delimiter='\t', skiprows=1)
     tabla = np.transpose(tabla)
     [listx,listy,list_lambda_p] = tabla
     

@@ -244,7 +244,7 @@ labell2 =  r'PP num $k_\parallel/(k_\parallel - k_{\rm p})$'
 graph(title,labelx,r'$\Gamma_{SP}/\Gamma_{\rm EELS}$',tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)
 plt.plot(listx,listy_im_ana,'.-',ms = ms,color = 'purple',label = 'PP analytical')
 plt.plot(listx,listy_im_num,'.',ms = ms,color = 'lightseagreen',label = 'full numerical')
-plt.plot(listx,listy_im_pole_aprox,'.-',ms = 3,color = 'darkred',label = 'PP numerical')
+plt.plot(listx,listy_im_pole_aprox,'.-',ms = 3,color = 'darkred',label = labell2)
 #plt.plot(listx,list_ana_parallel,'.-',ms = ms,color = 'darkred',label = r'$\Gamma_{\parallel}$')
 plt.plot(np.array(np.ones(10))*maxi, listy_aux,'-k')
 plt.legend(loc = 'best',markerscale=1.5,fontsize=tamlegend,frameon=0.2,handletextpad=0.2, handlelength=length_marker)

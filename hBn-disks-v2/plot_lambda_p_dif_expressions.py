@@ -71,7 +71,7 @@ N = 100
     # z0 = 0.06*1e3
 labelx = r'$\hbar\omega$ (eV)'   
 label1 = 'vs_energy_' + labelp
-listx = np.linspace(x1 + 1e-3,x4 - 1e-3,N)
+listx = np.linspace(x1 + 1e-3,0.195,N)
 
 def function_kp_Leila(energy0):
 
@@ -79,7 +79,8 @@ def function_kp_Leila(energy0):
 #    epsi_z = epsilon_z(E)
     
     epsi_HBN_par = epsi_x
-    sigma_2D = d_nano*(epsi_HBN_par - 1 )/(4*pi)  ## se cancela el i*omega del sigma 
+    d_micros = d_nano*1e-3
+    sigma_2D = d_micros*( 1 - epsi_HBN_par )/(4*pi)  ## se cancela el i*omega del sigma 
     kp = epsilon_Silica(energy0)/(2*np.pi*sigma_2D)
 
     return kp

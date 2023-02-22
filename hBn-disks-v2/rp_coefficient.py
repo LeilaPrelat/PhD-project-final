@@ -58,118 +58,6 @@ def epsilon_z(hbw):
     
     return epsi_inf - f_x*(num/den)
 
-#def hBn_lambda_p(hbw,epsi_silica):
-#    """
-#    Parameters
-#    ----------
-#    hbw : energia = hbar*omega en eV
-#    carrier_density : carrier density
-#    d_nano : thickness in nm
-#    decay_rate : 
-#    masa_eff : 
-#
-#    Returns
-#    -------
-#    devuelve la conductividad de un metal
-#    """
-#    epsi_x = epsilon_x(hbw)
-#    epsi_z = epsilon_z(hbw)
-#
-#    epsi_m = np.sqrt(epsi_x*epsi_z)
-#    
-##    if np.imag(epsi_m) > 0:
-##        epsi_m = epsi_m
-##    else:
-##        epsi_m = -epsi_m
-#
-#    epsi1 = epsi_silica(hbw)
-#    epsi3 = epsi_silica(hbw)
-#    
-#    num = (epsi1 - epsi_m)*(epsi3 - epsi_m)
-#    den = (epsi1 + epsi_m)*(epsi3 + epsi_m)
-#    
-#    tot = np.log(num/den)
-#
-#    cte_epsi = np.sqrt(epsi_x/epsi_z)
-#
-#########################################################################
-#### el self image green tensor no funciona bien con este cambio de signo 
-#### pero sin este cambio, el rp de la pole aprox en el primer polo es negativo 
-#    
-##    if np.imag(cte_epsi) > 0: 
-##        cte_epsi = cte_epsi
-##    else:
-##        cte_epsi = -cte_epsi
-#########################################################################    
-#
-#
-#    return 4*np.pi*cte_epsi/tot
-#
-#def hBn_Rp(hbw,epsi_silica):
-#    """
-#    Parameters
-#    ----------
-#    hbw : energia = hbar*omega en eV
-#    carrier_density : carrier density
-#    d_nano : thickness in nm
-#    decay_rate : 
-#    masa_eff : 
-#
-#    Returns
-#    -------
-#    devuelve la conductividad de un metal
-#    """
-#    epsi_x = epsilon_x(hbw)
-#    epsi_z = epsilon_z(hbw)
-#    
-#    lambda_p_v = hBn_lambda_p(hbw,epsi_silica) ## lambda/d
-#
-#    epsi1 = epsi_silica(hbw)
-#    
-##    c = 3*10**(14)                ### light velocity in micron/seg
-##    alfac = 1/137.0359            ### fine structure
-#    
-#    num = -epsi_z*epsi1
-#    den = epsi_x*epsi_z - epsi1**2
-#    
-#    tot = num/den
-#
-#    return tot*lambda_p_v/np.pi
-
-#%%
-
-#def rp_pole_aprox_v2(omegac,epsi_silica,d_nano,k_parallel_nano):     
-#    """    
-#    Parameters
-#    ----------
-#    omegac : omega/c = k0 en 1/micrometros    
-#    epsi1 : epsilon del medio de arriba del plano
-#    epsi2 : epsilon del medio de abajo del plano
-#    hbmu : chemical potential in eV  
-#    hbgama : collision frequency in eV
-#    z : coordenada z
-#    xD : coordenada x del dipolo 
-#    yD : coordenada y del dipolo
-#    zD : coordenada z del dipolo 
-#    zp : posicion del plano (>0)
-#    px : coordenada x del dipolo 
-#    py : coordenada y del dipolo
-#    pz : coordenada z del dipolo
-#    Returns
-#    -------
-#    px,py,pz en unidades de k*alfa_eff
-#    """
-#
-#    E = omegac*aux
-#    
-##    d_micros = d_nano*1e-3
-#    Rp = hBn_Rp(E,epsi_silica)
-#    lambda_p_v = hBn_lambda_p(E,epsi_silica)*d_nano
-#    kp = 2*np.pi/lambda_p_v
-#   
-#    rp = Rp*kp/(k_parallel_nano - kp)
-#      
-#    return rp
 
 def rp_pole_aprox(omegac,epsi_silica,d_nano,zp_nano,k_parallel_nano):     
     """    
@@ -203,7 +91,7 @@ def rp_pole_aprox(omegac,epsi_silica,d_nano,zp_nano,k_parallel_nano):
     
     r = (1 - epsi_silica(E))/(1 + epsi_silica(E))
 
-    sigma_2D = d_nano*(epsi_HBN_par - 1 )/(4*pi)  ## se cancela el i*omega del sigma 
+    sigma_2D = d_nano*( 1 - epsi_HBN_par )/(4*pi)  ## se cancela el i*omega del sigma 
  
     
     exp_fresnel =  np.exp(-2*k_parallel_nano*zp_nano)
@@ -256,7 +144,7 @@ def rp_pole_aprox_v2(omegac,epsi_silica,d_nano,zp_nano,k_parallel_nano):     ## 
     
     r = (1 - epsi_silica(E))/(1 + epsi_silica(E))
 
-    sigma_2D = d_nano*(epsi_HBN_par - 1 )/(4*pi)  ## se cancela el i*omega del sigma 
+    sigma_2D = d_nano*( 1 - epsi_HBN_par )/(4*pi)  ## se cancela el i*omega del sigma 
  
     
     exp_fresnel =  np.exp(-2*k_parallel_nano*zp_nano)
@@ -317,7 +205,7 @@ def rp_fresnel_num(omegac,epsi_silica,d_nano,zp_nano,k_parallel_nano):
 
 
 
-    sigma_2D = d_nano*(epsi_HBN_par - 1 )/(4*pi)  ## se cancela el i*omega del sigma 
+    sigma_2D = d_nano*( 1 - epsi_HBN_par )/(4*pi)  ## se cancela el i*omega del sigma 
 
 
     r_prima = (1 - epsi_silica(E)/(2*pi*k_parallel_nano*sigma_2D) )**(-1)

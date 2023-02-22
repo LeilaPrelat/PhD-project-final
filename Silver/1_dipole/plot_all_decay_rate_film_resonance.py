@@ -37,7 +37,7 @@ if not os.path.exists(path_save):
 err = 'decay_rate_film3_resonance.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_film3_resonance import EELS_film_ana_f_div_gamma0, EELS_film_num_f_div_gamma0, EELS_film_pole_aprox_f_div_gamma0
+    from decay_rate_film_resonance import EELS_film_ana_f_div_gamma0, EELS_film_num_f_div_gamma0, EELS_film_pole_aprox_f_div_gamma0
 except ModuleNotFoundError:
     print(err)
 
@@ -67,7 +67,7 @@ d_nano = 10
 title4 = r'b = %i nm' %(b*1e3)
 labelp = r'_res' 
 
-N = 200
+N = 150
 
 
 
@@ -124,15 +124,17 @@ if plot_vs_E ==1 :
 
 if plot_vs_zp == 1 : 
     int_v0 = 10 ## deberia ser 150 (disp relation) pero funciona con 10 <--- problema con la relacion de dispersion
-    E0 = 1.3755 #eV
+    E0 = 1.5 #eV
 #    E0 = 1.5
 
     labelx = r'Surface-dipole distance, $z_{\rm 0}$/$\lambda_{\rm p}$'   
     title4 = title4 + ', ' + r'v = c/%i, $\hbar\omega$ = %i eV' %(int_v0,E0)
     label1 = 'vs_zp' + labelp + '_E%imeV_d%inm' %(E0*1e3,d_nano)
 #    listx = np.linspace(0.0001,2,N)
-    listx = np.linspace(0.1,160,N)
-    
+    if E0 < 1.4:
+        listx = np.linspace(0.1,160,N)
+    else:
+        listx = np.linspace(0.1,400,N)
 #    print(minimum_function(E0,int_v0)*1e3)
 #    print(np.abs(minimum_function(E0,int_v0))*2*1e3)
     

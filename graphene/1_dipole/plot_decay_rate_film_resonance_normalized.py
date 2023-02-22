@@ -217,7 +217,9 @@ listy_aux  = np.linspace(np.min(listy_im_ana), np.max(listy_im_ana), 10)
 listx_2 = np.array(listx)/lambda_p_value
 maxi2 = maxi/lambda_p_value
 
-omega_omega_D = E0*1e-3/hbmu
+omega_D = hbmu/np.pi ## sin el hbar porque se cancela con el listx 
+    
+omega_omega_D = E0*1e-3/omega_D
 
 #if E0 == 45 and int_v0 == 10:
 #    zp_crit_lambda_p_value =  0.7361932072984527  ## for     E0 = 45 # meV  int_v0 = 10

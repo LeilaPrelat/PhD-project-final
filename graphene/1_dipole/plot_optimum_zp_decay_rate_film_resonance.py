@@ -18,7 +18,7 @@ from scipy.signal import find_peaks
 #sns.set()
 
 #%%
-paper = 1
+
 load_data = 1
 create_data = 0
 
@@ -204,9 +204,10 @@ if load_data == 1:
     labely = 'Surface-dipole' + '\n' +  r'distance  $z_{\rm 0}$/$\lambda_{\rm p}$'
     labelx = r'Frequency $\omega$/$\omega_{\rm D}$'
     
-    omega_D = hbmu ## sin el hbar porque se cancela con el listx 
+    omega_D = hbmu/np.pi ## sin el hbar porque se cancela con el listx 
     
-    listx_2 = np.array(listx)*1e-3/hbmu ## sin el hbar porque se cancela con el listx 
+    
+    listx_2 = np.array(listx)*1e-3/omega_D ## sin el hbar porque se cancela con el listx 
     
     list_zp_div_lambda_p = savgol_filter(list_zp_div_lambda_p, 81, 3)
     

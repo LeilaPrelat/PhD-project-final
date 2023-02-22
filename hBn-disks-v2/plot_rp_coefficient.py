@@ -55,10 +55,14 @@ aux2 = 1e12/c
 
 print('Definir parametros del problema')
 
+x1 = 0.09260651629072682 
+x2 = 0.10112781954887218
+
+x3 = 0.17030075187969923
+x4 = 0.19937343358395992
 
 
-
-energy0 = 0.2 # eV  np.linspace(0.087, 0.8, N) ### for higher freq de 
+energy0 = 0.175 # eV  np.linspace(0.087, 0.8, N) ### for higher freq de 
 #energy0 = 0.2
 
 d_nano = 0.4

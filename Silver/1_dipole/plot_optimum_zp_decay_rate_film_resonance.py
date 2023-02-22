@@ -248,14 +248,14 @@ if load_data == 1:
     list_zp_div_lambda_p = savgol_filter(list_zp_div_lambda_p, 71, 3)
     
     
-    omega_D_grafeno = 0.3 ## sin el hbar porque se cancela con el listx 
+    omega_D_grafeno = 0.3/np.pi ## sin el hbar porque se cancela con el listx 
     listx_2_grafeno = np.array(listx_grafeno)*1e-3/omega_D_grafeno ## sin el hbar porque se cancela con el listx 
     list_zp_div_lambda_p_grafeno = savgol_filter(list_zp_div_lambda_p_grafeno, 81, 3)
 
 
 
     graph(title,labelx,labely,tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)
-    plt.plot(listx_2,np.array(list_zp_div_lambda_p),'-',ms = ms,color = 'purple',label = 'silver')
+    plt.plot(listx_2,np.array(list_zp_div_lambda_p),'-',ms = ms,color = 'darkred',label = 'silver')
 #    plt.plot(listx,np.array(list_lambda_p)*1e-3,'--',ms = ms,color = 'lightseagreen')
 #    plt.legend(loc = 'best',markerscale=mk,fontsize=tamlegend,frameon=False,handletextpad=hp, handlelength=1)
     plt.tight_layout()
@@ -266,8 +266,8 @@ if load_data == 1:
 
 
     graph(title,labelx,labely,tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)
-    plt.plot(listx_2,np.array(list_zp_div_lambda_p),'-',ms = ms,color = 'purple',label = 'silver')
-    plt.plot(listx_2_grafeno,np.array(list_zp_div_lambda_p_grafeno),'.-',ms = ms,color = 'darkred',label = 'graphene')    
+    plt.plot(listx_2,np.array(list_zp_div_lambda_p),'-',ms = ms,color = 'darkred',label = 'silver')
+    plt.plot(listx_2_grafeno,np.array(list_zp_div_lambda_p_grafeno),'.-',ms = ms,color = 'purple',label = 'graphene')    
 #    plt.plot(listx,np.array(list_lambda_p)*1e-3,'--',ms = ms,color = 'lightseagreen')
     plt.legend(loc = 'best',markerscale=mk,fontsize=tamlegend,frameon=False,handletextpad=hp, handlelength=1)
     plt.tight_layout()
