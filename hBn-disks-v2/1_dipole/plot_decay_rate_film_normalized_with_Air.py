@@ -37,7 +37,7 @@ if not os.path.exists(path_save):
 err = 'decay_rate_film3.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_film_resonance import EELS_film_ana_f_div_gamma0,EELS_film_ana_f_div_gamma0_v3
+    from decay_rate_film import EELS_film_ana_f_div_gamma0
 except ModuleNotFoundError:
     print(err)
 try:
@@ -45,6 +45,7 @@ try:
     from hBn_PP import hBn_lambda_p,epsilon_x
 except ModuleNotFoundError:
     print(err)
+
 
 try:
     sys.path.insert(1, path_constants)
@@ -92,7 +93,7 @@ def function_imag_ana(energy0,int_v,zp_nano):
     omegac0 = energy0/aux 
     zp = zp_nano*1e-3
 
-    rta1 = EELS_film_ana_f_div_gamma0_v3(omegac0,epsi1_function, d_nano_film, d_thickness_disk_nano, D_disk_nano,int_v,b,zp)
+    rta1 = EELS_film_ana_f_div_gamma0(omegac0,epsi1_function, d_nano_film, d_thickness_disk_nano, D_disk_nano,int_v,b,zp)
 #    rta2 = EELS_dir_ana_f(omegac0,epsi1,epsi2,hbmu,hbgama,int_v,b,zp)
     
 #    print(rta1)
@@ -115,7 +116,7 @@ def function_imag_ana(energy0,int_v,zp_nano):
 #    return rta    
     
 
-def lambda_p(energy0):
+def lambda_p_v2(energy0):
     
 #    d_micros = d_nano*1e-3
     lambda_p_v = hBn_lambda_p(energy0,epsi1,epsi3)*d_nano_film
@@ -123,7 +124,7 @@ def lambda_p(energy0):
     return lambda_p_v ## en nano
 
 
-def lambda_p_v2(energy0): ## creo que esta no tiene mucho que ver 
+def lambda_p(energy0): ## creo que esta no tiene mucho que ver 
     
     epsi_x = epsilon_x(energy0)
     epsi_HBN_par = epsi_x
@@ -132,7 +133,7 @@ def lambda_p_v2(energy0): ## creo que esta no tiene mucho que ver
     omegac = energy0/aux
 #    d_micros = d_nano*1e-3
     d_micro = d_nano_film*1e-3
-    alfa_p = epsi_silica*2/(omegac*d_micro*(epsi_HBN_par-1))
+    alfa_p = epsi_silica*2/(omegac*d_micro*(1 - epsi_HBN_par))
     kp = alfa_p*omegac
       
 
@@ -167,7 +168,7 @@ if plot_vs_zp == 1 :
 
     E0 = 0.171 
 #    E0 = 0.175
-#    E0 = 0.195
+    E0 = 0.195
 #    
     labelx = r'Surface-dipole distance, $z_{\rm 0}$/$\lambda_{\rm p}$'   
     title4 = title4 + ', ' + r'v = c/%i, $\hbar\omega$ = %i eV' %(int_v0,E0)
@@ -190,7 +191,7 @@ if plot_vs_zp == 1 :
         listx = np.linspace(1,10,N)#    print(minimum_function(E0,int_v0)*1e3)
 #    print(np.abs(minimum_function(E0,int_v0))*2*1e3)
     if E0 == 0.171:
-        listx = np.linspace(3,14,N)
+        listx = np.linspace(15,19,N)
         
     elif E0 == 0.175:
         listx = np.linspace(7.3,9.3,N)

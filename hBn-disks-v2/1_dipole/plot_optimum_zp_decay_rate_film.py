@@ -20,8 +20,8 @@ from scipy.signal import find_peaks
 #%%
 
 
-create_data = 1
-load_data = 0
+create_data = 0
+load_data = 1
 
 #%%
 
@@ -133,7 +133,7 @@ listx  = np.linspace(0.171 , 0.195, 100)
 
 #%%
 
-def lambda_p(energy0):
+def lambda_p_v2(energy0):
     
     E = energy0
     
@@ -147,7 +147,7 @@ def lambda_p(energy0):
     return lambda_p_v
 
 
-def lambda_p_v2(energy0): ## creo que esta no tiene mucho que ver 
+def lambda_p(energy0): ## creo que esta no tiene mucho que ver 
     
     epsi_x = epsilon_x(energy0)
     epsi_HBN_par = epsi_x
@@ -156,7 +156,7 @@ def lambda_p_v2(energy0): ## creo que esta no tiene mucho que ver
     omegac = energy0/aux
 #    d_micros = d_nano*1e-3
     d_micro = d_nano_film*1e-3
-    alfa_p = epsi_silica*2/(omegac*d_micro*(epsi_HBN_par-1))
+    alfa_p = epsi_silica*2/(omegac*d_micro*(1 - epsi_HBN_par))
     kp = alfa_p*omegac
       
 

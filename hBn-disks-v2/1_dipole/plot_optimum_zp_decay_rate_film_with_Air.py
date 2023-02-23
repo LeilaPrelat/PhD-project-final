@@ -34,12 +34,13 @@ if not os.path.exists(path_save):
     print('Creating folder to save graphs')
     os.mkdir(path_save)
 
-err = 'decay_rate_film3.py no se encuentra en ' + path_basic
+err = 'decay_rate_film.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_film_resonance import EELS_film_ana_f, EELS_film_pole_aprox_f
+    from decay_rate_film import EELS_film_ana_f_div_gamma0
 except ModuleNotFoundError:
     print(err)
+
 
 
 
@@ -132,7 +133,7 @@ listx  = np.linspace(0.171 , 0.195, 100)
 
 #%%
 
-def lambda_p(energy0):
+def lambda_p_v2(energy0):
     
     E = energy0
     
@@ -146,7 +147,7 @@ def lambda_p(energy0):
     return lambda_p_v
 
 
-def lambda_p_v2(energy0): ## creo que esta no tiene mucho que ver 
+def lambda_p(energy0): ## creo que esta no tiene mucho que ver 
     
     epsi_x = epsilon_x(energy0)
     epsi_HBN_par = epsi_x
@@ -155,7 +156,7 @@ def lambda_p_v2(energy0): ## creo que esta no tiene mucho que ver
     omegac = energy0/aux
 #    d_micros = d_nano*1e-3
     d_micro = d_nano_film*1e-3
-    alfa_p = epsi_silica*2/(omegac*d_micro*(epsi_HBN_par-1))
+    alfa_p = epsi_silica*2/(omegac*d_micro*(1- epsi_HBN_par))
     kp = alfa_p*omegac
       
 
@@ -191,12 +192,12 @@ def function_imag_ana(energy0): ## devuelve el zp optimo en nanometros
         list_zp_nano = np.linspace(0.001,3.5,N)
     else:
         list_zp_nano = np.linspace(1,10,N)#         
-        list_zp_nano = np.linspace(2,11,N) # mas preciso          
+        list_zp_nano = np.linspace(2,20,N) # mas preciso          
         
     listy = []
     for zp_nano in list_zp_nano:
         zp = zp_nano*1e-3
-        rta = EELS_film_pole_aprox_f(omegac0,epsi1_function, d_nano_film, d_thickness_disk_nano, D_disk_nano,int_v,b,zp)
+        rta = EELS_film_ana_f_div_gamma0(omegac0,epsi1_function, d_nano_film, d_thickness_disk_nano, D_disk_nano,int_v,b,zp)
         listy.append(rta)
 #    print(energy0,v_sobre_c)
         
