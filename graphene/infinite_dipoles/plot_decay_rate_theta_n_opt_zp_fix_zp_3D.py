@@ -60,7 +60,7 @@ int_v = 10
 
 Nmax = 1
 
-labelz = r'$\Gamma_{\rm SP}/\Gamma_{\rm EELS}$'
+labelz = r'$\Gamma_{\text{SP}, n}/\Gamma_{\rm EELS}$'
 
 tabla = np.loadtxt('zp_optimum_for_decay_rate_graphene_resonance_b-10nm.txt', delimiter='\t', skiprows=1)
 tabla = np.transpose(tabla)
