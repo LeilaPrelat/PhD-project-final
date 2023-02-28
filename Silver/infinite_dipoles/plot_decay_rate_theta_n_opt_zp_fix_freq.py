@@ -189,7 +189,7 @@ def function_real_ana(zp_nano,Nmax):
     omegac0 = energy0_eV/(c*hb)  
     zp = zp_nano*1e-3
          
-    rta = decay_rate_theta_inf_dipoles_ana_res(omegac0,epsi1,epsi3,d_nano,int_v,zp,a,b,Nmax)
+    rta = decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3(omegac0,epsi1,epsi3,d_nano,int_v,zp,a,b,Nmax)
 
     return rta
 

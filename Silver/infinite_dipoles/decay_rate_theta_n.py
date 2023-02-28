@@ -219,8 +219,8 @@ def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3(omegac,epsi1,epsi3,d_nano
         
     rta = (np.abs(phi_n)**2)*cte_formula*k_prima*(int_v**(-2))/(factor_K*seno_theta_n)    
         
-    return rta ## el grafeno tiene un radio mas grande 
 
+    return 12*rta
 
 
 

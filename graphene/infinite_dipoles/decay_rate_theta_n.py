@@ -207,5 +207,5 @@ def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v4(omegac,epsi1,epsi2,hbmu,h
         
     rta = (np.abs(phi_n)**2)*cte_formula*k_prima*(int_v**(-2))/(factor_K*seno_theta_n)
         
-    return rta
+    return 12*rta
 
