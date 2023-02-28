@@ -107,7 +107,7 @@ def EELS_film_ana_f_div_gamma0(omegac,epsi1,epsi3,d_nano,int_v,b,zp):     ## nor
     rta = np.imag(Green_self)*factor_final/factor_K    
     
 
-    return rta 
+    return 3*rta 
 
 #%%
     
@@ -166,8 +166,7 @@ def EELS_film_num_f_div_gamma0(omegac,epsi1,epsi3,d_nano,int_v,b,zp):     ## nor
     rta = np.imag(Green_self)*factor_final/factor_K    
     
 
-    return rta 
-
+    return 3*rta 
 
 
 def EELS_film_pole_aprox_f_div_gamma0(omegac,epsi1,epsi3,d_nano,int_v,b,zp):     ## normalizando con el paper 149
@@ -224,4 +223,4 @@ def EELS_film_pole_aprox_f_div_gamma0(omegac,epsi1,epsi3,d_nano,int_v,b,zp):    
     rta = np.imag(Green_self)*factor_final/factor_K    
     
 
-    return rta 
+    return 3*rta 

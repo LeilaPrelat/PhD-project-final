@@ -233,13 +233,15 @@ listy_aux  = np.linspace(np.min(listy_im_ana), np.max(listy_im_ana), 10)
 listx_2 = np.array(listx)/lambda_p_value
 maxi2 = maxi/lambda_p_value
 
+E0_silver = E0
 d_micro = d_nano*1e-3
 omega_bulk_silver = 9.17/hb ## frequency
 omegaD_silver = (omega_bulk_silver**2)*d_micro/(4*np.pi*c)
-omega_omega_D_silver = E0/(hb*omegaD_silver)
+omega_omega_D_silver = E0_silver/(hb*omegaD_silver)
 
+E0_graphene = 45*1e-3
 omegaD_graphene = 0.3/np.pi ## en eV
-omega_omega_D_graphene = E0/(omegaD_graphene)
+omega_omega_D_graphene = E0_graphene/(omegaD_graphene)
 print(omega_omega_D_silver,omega_omega_D_graphene)
 
 #if E0 == 1.5 and int_v0 == 10:
@@ -257,19 +259,19 @@ print(omega_omega_D_silver,omega_omega_D_graphene)
 #title = title1 + ', ' + title2
 
 os.chdir(path_basic)
-tabla = np.loadtxt('decay_rate_normalized_grafeno_vs_zp_res_E45meV.txt' , delimiter='\t', skiprows=1)
+tabla = np.loadtxt('decay_rate_normalized_grafeno_vs_zp_res_E%imeV.txt' %(E0_graphene*1e3) , delimiter='\t', skiprows=1)
 tabla = np.transpose(tabla)
 [listx_2_grafeno,listy_im_ana_grafeno] = tabla
 
 
-
+loc1x,loc1y = 0.71,0.092
 graph(title,labelx,r'$\Gamma_{\rm SP}/\Gamma_{\rm EELS}$',tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)
 plt.plot(listx_2,np.array(listy_im_ana),'-',ms = ms,color = 'darkred')
 #plt.title(title,fontsize=int(tamtitle*0.9))
 #plt.plot(listx,list_ana_parallel,'.-',ms = ms,color = 'darkred',label = r'$\Gamma_{\parallel}$')
 #plt.plot(np.ones(10)*zp_crit_lambda_p_value, np.array(listy_aux)*1e-12,'--k')
 #plt.plot([],[],'.w',label = r'$\omega/\omega_{\rm D}$=%.2f'%(omega_omega_D))
-plt.text(0.83,0.03,r'$\omega/\omega^{\rm Ag}_{\rm D}$ = %i'%(omega_omega_D_silver),fontsize=tamlegend)
+plt.text(loc1x,loc1y,r'$\omega/\omega^{\rm Ag}_{\rm D}$ = %i'%(omega_omega_D_silver),fontsize=tamlegend)
 plt.legend(loc = 'best',markerscale=mk,fontsize=tamlegend,frameon=False,handletextpad=hp, handlelength=0)
 plt.tight_layout()
 #if plot_vs_c == 1:
@@ -286,8 +288,8 @@ plt.plot(listx_2_grafeno,np.array(listy_im_ana_grafeno),'.-',ms = ms,color = 'pu
 #plt.title(title,fontsize=int(tamtitle*0.9))
 #plt.plot(listx,list_ana_parallel,'.-',ms = ms,color = 'darkred',label = r'$\Gamma_{\parallel}$')
 #plt.plot(np.ones(10)*zp_crit_lambda_p_value, np.array(listy_aux)*1e-12,'--k')
-plt.text(0.83,0.0298,r'$\omega/\omega^{\rm Ag}_{\rm D}$ = %i'%(omega_omega_D_silver),fontsize=tamlegend)
-plt.text(0.83,0.0225,r'$\omega/\omega^{\rm gr}_{\rm D}$ = %i'%(omega_omega_D_graphene),fontsize=tamlegend)
+plt.text(0.81,0.09,r'$\omega/\omega^{\rm Ag}_{\rm D}$ = %i'%(omega_omega_D_silver),fontsize=tamlegend)
+plt.text(0.81,0.068,r'$\omega/\omega^{\rm gr}_{\rm D}$ = %.2f'%(omega_omega_D_graphene),fontsize=tamlegend)
 plt.legend(loc = 'best',markerscale=mk,fontsize=tamlegend,frameon=False,handletextpad=hp, handlelength=1)
 plt.tight_layout()
 #if plot_vs_c == 1:
