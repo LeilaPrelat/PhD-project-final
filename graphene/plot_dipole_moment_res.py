@@ -52,7 +52,7 @@ int_v = 10
 
 epsi1,epsi2 = 1,1
 hbmu,hbgama = 0.3,0.0001
-zp = 0.05
+zp = 0.1
 b = -0.01
 
 

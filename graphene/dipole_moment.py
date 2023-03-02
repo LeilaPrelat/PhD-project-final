@@ -147,11 +147,11 @@ def dipole_moment_anav2(omegac,epsi1,epsi2,hbmu,hbgama,int_v,b,zp,omega0,kappa_f
 #    term_extra = 2*np.pi*1j*Rp*kp*np.abs(kp)*expo/ky
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - 2*np.pi*1j*Rp*kp*expo/ky)
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - 2*np.pi*1j*Rp*kp*expo/ky)
     
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - 2*np.pi*1j*Rp*kp*expo)
+    py = alffa_eff_y*( - np.sqrt(2)*omegac*int_v*K1 + 2*np.pi*Rp*kp*expo)
     
-    pz = alffa_eff_z*(-omegac*int_v*K1 + 2*np.pi*1j*Rp*(kp**2)*expo/ky )
+    pz = alffa_eff_z*( - np.sqrt(2)*omegac*int_v*K1 + 2*np.pi*1j*Rp*(kp**2)*expo/ky )
     
     return px, py, pz
 
@@ -255,13 +255,13 @@ def dipole_moment_num(omegac,epsi1,epsi2,hbmu,hbgama,int_v,b,zp,omega0,kappa_fac
     arg = np.abs(b)*omegac*int_v
     K1 = special.kn(1,arg)
     K0 = special.kn(0,arg)    
+
+
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - INT_x)
     
+    py = alffa_eff_y*(  - np.sqrt(2)*omegac*int_v*K1 + 1j*k0*INT_y)
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - INT_x)
-    
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - k0*INT_y)
-    
-    pz = alffa_eff_z*(-omegac*int_v*K1 + k0*INT_z )
+    pz = alffa_eff_z*(  - np.sqrt(2)*omegac*int_v*K1 + k0*INT_z )
     
     return px, py, pz
 

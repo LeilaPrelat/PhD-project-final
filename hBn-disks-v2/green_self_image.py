@@ -96,9 +96,10 @@ def green_self_num(omegac,epsi_silica,d_nano,zp_micro):
     cota_inf1 = 0.01/omegac
     
 ####       
-    cte_x = k1_3*0.5 #signo menos
+    cte_x = k1_3*0.5/epsi_silica(E) # antes epsi1 era 1
 
     
+  
 
 
     IntselfB_function_re_xx = lambda u: np.real((u**2)*rp(u)*expB_self(u))
@@ -174,13 +175,14 @@ def green_self_num_integral_inside_light_cone(omegac,epsi_silica,d_nano,zp_micro
     rp = lambda u: u/(u*(1-r*expB_self(u)) - alfa_p)
 
 
-    cota_sup1 = 1/omegac
-    cota_inf1 = 0.01/omegac
+    cota_sup1 = np.sqrt(epsi_silica(E))
+    cota_inf1 = 0.01
     
 ####       
-    cte_x = k1_3*0.5 #signo menos
+    cte_x = k1_3*0.5/epsi_silica(E) # antes epsi1 era 1
 
     
+
 
 
     IntselfB_function_re_xx = lambda u: np.real((u**2)*rp(u)*expB_self(u))
@@ -253,7 +255,9 @@ def green_self_pole_aprox(omegac,epsi_silica,d_nano,zp_micro):
     
     
 ####       
-    cte_x = k1_3*0.5 #signo menos
+    cte_x = k1_3*0.5/epsi_silica(E) # antes epsi1 era 1
+
+    
 
     
     z_dip_barra_self = k1*2*zp_micro  #NO ESTOY SEGURA DE ESTA EXPONENCIAL EH 
@@ -322,8 +326,7 @@ def green_self_ana_residuos(omegac,epsi_silica,d_nano,zp_micro):
 #    alfa_p = np.real(alfa_p)
       
 
-    cte_x = 1j*np.pi*Rp*kp_3*0.5 #signo menos
-    
+    cte_x = 1j*np.pi*Rp*kp_3*0.5/epsi_silica(E) # antes epsi1 era 1
 
     z_dip_barra_self = omegac*2*zp_micro  #NO ESTOY SEGURA DE ESTA EXPONENCIAL EH 
     expB_self = np.exp(-alfa_p*z_dip_barra_self) 
@@ -380,7 +383,7 @@ def green_self_ana_exponential_function(omegac,epsi_silica,d_nano,zp_micro):
         dif_term = kp*np.pi*1j*np.exp(arg)
         
     
-    rtaself_x = 0.5*( 2*(2*zp_micro)**(-3) + kp*(2*zp_micro)**(-2) + kp**2*dif_term   )
+    rtaself_x = 0.5*( 2*(2*zp_micro)**(-3) + kp*(2*zp_micro)**(-2) + kp**2*dif_term   )/epsi_silica(E)
     
     
 

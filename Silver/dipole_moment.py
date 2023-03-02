@@ -148,11 +148,12 @@ def dipole_moment_anav2(omegac,epsi1,epsi3,d_nano,int_v,b,zp,omega0,kappa_factor
 #    term_extra = 2*np.pi*1j*Rp*kp*np.abs(kp)*expo/ky
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - np.pi*1j*Rp*kp*expo/ky)
     
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - np.pi*1j*Rp*kp*expo)
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - 2*np.pi*1j*Rp*kp*expo/ky)
     
-    pz = alffa_eff_z*(-omegac*int_v*K1 + np.pi*1j*Rp*(kp**2)*expo/ky )
+    py = alffa_eff_y*( - np.sqrt(2)*omegac*int_v*K1 + 2*np.pi*Rp*kp*expo)
+    
+    pz = alffa_eff_z*( - np.sqrt(2)*omegac*int_v*K1 + 2*np.pi*1j*Rp*(kp**2)*expo/ky )
     
     return px, py, pz
 
@@ -199,10 +200,7 @@ def dipole_moment_num(omegac,epsi1,epsi3,d_nano,int_v,b,zp,omega0,kappa_factor_o
     alffa_eff_x = (1/alffa -  rtaself_x)**(-1)
     alffa_eff_y = (1/alffa -  rtaself_y)**(-1)
     alffa_eff_z = (1/alffa -  rtaself_z)**(-1)
-    
-#    charge_electron = alffa_eff*4.806e-10*int_v/(2*np.pi)
-    charge_electron = 4.806e-10/c
-    cte_uni = int_v/(2*np.pi*c)
+
     
     cota_inf = 0.01/k0
     cota_sup = 600/k0   
@@ -282,11 +280,11 @@ def dipole_moment_num(omegac,epsi1,epsi3,d_nano,int_v,b,zp,omega0,kappa_factor_o
     K0 = special.kn(0,arg)    
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - INT_x)
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - INT_x)
     
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - k0*INT_y)
+    py = alffa_eff_y*(  - np.sqrt(2)*omegac*int_v*K1 - 1j*k0*INT_y)
     
-    pz = alffa_eff_z*(-omegac*int_v*K1 + k0*INT_z )
+    pz = alffa_eff_z*(  - np.sqrt(2)*omegac*int_v*K1 + k0*INT_z )
     
     return px, py, pz
 
@@ -386,10 +384,10 @@ def dipole_moment_pole_aprox(omegac,epsi1,epsi3,d_nano,int_v,b,zp,omega0,kappa_f
     K0 = special.kn(0,arg)    
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - INT_x)
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - INT_x)
     
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - k0*INT_y)
+    py = alffa_eff_y*(  - np.sqrt(2)*omegac*int_v*K1 - 1j*k0*INT_y)
     
-    pz = alffa_eff_z*(-omegac*int_v*K1 + k0*INT_z )
+    pz = alffa_eff_z*(  - np.sqrt(2)*omegac*int_v*K1 + k0*INT_z )
     
-    return px,py,pz
+    return px, py, pz

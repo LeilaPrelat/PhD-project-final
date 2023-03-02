@@ -136,7 +136,7 @@ def lambda_p_v2(energy0):
 #E0 = 0.1625
 
 E0 = 0.171
-#E0 = 0.195
+E0 = 0.195
 int_v0 = 10
 lambbda_p = np.real(lambda_p(E0))
 

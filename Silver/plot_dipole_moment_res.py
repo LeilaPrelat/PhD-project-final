@@ -48,7 +48,7 @@ aux2 = 1e12/c
 print('Definir parametros del problema')
 
 
-d_nano = 10
+d_nano = 1
 if d_nano == 1:
     int_v = 10
 elif d_nano == 10:

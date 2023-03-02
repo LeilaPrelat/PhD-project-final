@@ -37,7 +37,7 @@ if not os.path.exists(path_save):
 err = 'decay_rate_film.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_film import EELS_film_ana_f_div_gamma0
+    from decay_rate_film import EELS_film_ana_f_div_gamma0,EELS_film_ana_f_div_gamma0_v2
 except ModuleNotFoundError:
     print(err)
 try:
@@ -74,7 +74,7 @@ b = -0.01
 d_nano_film = 1
 
 D_disk_nano = 100
-d_thickness_disk_nano = 1
+d_thickness_disk_nano = 0.96
 #title1 = r'$\kappa$ = %.2f$\omega_0$, $\kappa_r$ = %.2f$\kappa$, $E_0$=%i meV' %(kappa_factor_omega0, kappa_r_factor, energy0_pol)     
 #title2 = r'$\hbar\mu$ = %.2feV, $\hbar\gamma$ = %.4feV' %(hbmu,hbgama) 
 #title3 = r'$z_p$=%inm, px=%i, py=%i, pz=%i' %(zp*1e3,px,py,pz)
@@ -145,7 +145,7 @@ if plot_vs_zp == 1 :
     E0 = 0.173 # eV
  #   E0 = 0.095
 
-    E0 = 0.173 
+    E0 = 0.171 
 #    E0 = 0.175
 #    E0 = 0.195
 #    
@@ -170,7 +170,7 @@ if plot_vs_zp == 1 :
         listx = np.linspace(1,10,N)#    print(minimum_function(E0,int_v0)*1e3)
 #    print(np.abs(minimum_function(E0,int_v0))*2*1e3)
     if E0 == 0.171:
-        listx = np.linspace(3,14,N)
+        listx = np.linspace(16,18,N)
         
     elif E0 == 0.175:
         listx = np.linspace(7.3,9.3,N)

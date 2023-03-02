@@ -117,11 +117,11 @@ def dipole_moment_anav2_resonance(omegac,epsi1,epsi2,hbmu,hbgama,int_v,b,zp):
 #    term_extra = 2*np.pi*1j*Rp*kp*np.abs(kp)*expo/ky
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - 2*np.pi*1j*Rp*kp*expo/ky)
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - 2*np.pi*1j*Rp*kp*expo/ky)
     
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - 2*np.pi*1j*Rp*kp*expo)
+    py = alffa_eff_y*( - np.sqrt(2)*omegac*int_v*K1 + 2*np.pi*Rp*kp*expo)
     
-    pz = alffa_eff_z*(-omegac*int_v*K1 + 2*np.pi*1j*Rp*(kp**2)*expo/ky )
+    pz = alffa_eff_z*( - np.sqrt(2)*omegac*int_v*K1 + 2*np.pi*1j*Rp*(kp**2)*expo/ky )
     
     return px, py, pz
 
@@ -166,11 +166,7 @@ def dipole_moment_anav2_for_decay_rate_resonance(omegac,epsi1,epsi2,hbmu,hbgama,
     
     alffa_eff_x = 1j*(2*omegac**3/(3*epsi1) +  np.imag(rtaself_x))**(-1)
     alffa_eff_y = 1j*(2*omegac**3/(3*epsi1) +  np.imag(rtaself_y))**(-1)
-    alffa_eff_z = 1j*(2*omegac**3/(3*epsi1) +  np.imag(rtaself_z))**(-1)
-
-    charge_electron = 4.806e-10/c
-    cte_uni = int_v/(2*np.pi*c)
-    
+    alffa_eff_z = 1j*(2*omegac**3/(3*epsi1) +  np.imag(rtaself_z))**(-1)    
 
     cond = 4*np.pi*alfac*sigma_DL(E,hbmu,hbgama)
     Rp = 2*epsi1/(epsi1 + epsi2)
@@ -194,11 +190,11 @@ def dipole_moment_anav2_for_decay_rate_resonance(omegac,epsi1,epsi2,hbmu,hbgama,
 #    term_extra = 2*np.pi*1j*Rp*kp*np.abs(kp)*expo/ky
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - 2*np.pi*1j*Rp*kp*expo/ky)
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - 2*np.pi*1j*Rp*kp*expo/ky)
     
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - 2*np.pi*1j*Rp*kp*expo)
+    py = alffa_eff_y*( - np.sqrt(2)*omegac*int_v*K1 + 2*np.pi*Rp*kp*expo)
     
-    pz = alffa_eff_z*(-omegac*int_v*K1 + 2*np.pi*1j*Rp*(kp**2)*expo/ky )
+    pz = alffa_eff_z*( - np.sqrt(2)*omegac*int_v*K1 + 2*np.pi*1j*Rp*(kp**2)*expo/ky )
     
     return px, py, pz
 
@@ -247,9 +243,6 @@ def dipole_moment_num_resonance(omegac,epsi1,epsi2,hbmu,hbgama,int_v,b,zp):
     alffa_eff_y = 1j*(2*omegac**3/(3*epsi1) +  np.imag(rtaself_y))**(-1)
     alffa_eff_z = 1j*(2*omegac**3/(3*epsi1) +  np.imag(rtaself_z))**(-1)
     
-#    charge_electron = alffa_eff*4.806e-10*int_v/(2*np.pi)
-    charge_electron = 4.806e-10/c
-    cte_uni = int_v/(2*np.pi*c)
     
     cota_inf = 0.01/k0
     cota_sup = 600/k0   
@@ -305,11 +298,13 @@ def dipole_moment_num_resonance(omegac,epsi1,epsi2,hbmu,hbgama,int_v,b,zp):
     K0 = special.kn(0,arg)    
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - INT_x)
+
+
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - INT_x)
     
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - k0*INT_y)
+    py = alffa_eff_y*(  - np.sqrt(2)*omegac*int_v*K1 - 1j*k0*INT_y)
     
-    pz = alffa_eff_z*(-omegac*int_v*K1 + k0*INT_z )
+    pz = alffa_eff_z*(  - np.sqrt(2)*omegac*int_v*K1 + k0*INT_z )
     
     return px, py, pz
 
@@ -415,11 +410,13 @@ def dipole_moment_num_for_decay_rate_resonance(omegac,epsi1,epsi2,hbmu,hbgama,in
     K0 = special.kn(0,arg)    
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - INT_x)
+
+
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - INT_x)
     
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - k0*INT_y)
+    py = alffa_eff_y*(  - np.sqrt(2)*omegac*int_v*K1 - 1j*k0*INT_y)
     
-    pz = alffa_eff_z*(-omegac*int_v*K1 + k0*INT_z )
+    pz = alffa_eff_z*(  - np.sqrt(2)*omegac*int_v*K1 + k0*INT_z )
     
     return px, py, pz
 
@@ -515,15 +512,15 @@ def dipole_moment_pole_aprox_resonance(omegac,epsi1,epsi2,hbmu,hbgama,int_v,b,zp
     K1 = special.kn(1,arg)
     K0 = special.kn(0,arg)    
     
-    
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - INT_x)
-    
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - k0*INT_y)
-    
-    pz = alffa_eff_z*(-omegac*int_v*K1 + k0*INT_z )
-    
-    return px,py,pz
 
+
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - INT_x)
+    
+    py = alffa_eff_y*(  - np.sqrt(2)*omegac*int_v*K1 - 1j*k0*INT_y)
+    
+    pz = alffa_eff_z*(  - np.sqrt(2)*omegac*int_v*K1 + k0*INT_z )
+    
+    return px, py, pz
 
 
 
@@ -620,14 +617,15 @@ def dipole_moment_pole_aprox_for_decay_rate_resonance(omegac,epsi1,epsi2,hbmu,hb
     K0 = special.kn(0,arg)    
     
     
-    px = alffa_eff_x*1j*omegac*int_v*(K0 - INT_x)
-    
-    py = alffa_eff_y*1j*(2*1j*omegac*int_v*K1 - k0*INT_y)
-    
-    pz = alffa_eff_z*(-omegac*int_v*K1 + k0*INT_z )
-    
-    return px,py,pz
 
+
+    px = alffa_eff_x*1j*omegac*int_v*(2*K0 - INT_x)
+    
+    py = alffa_eff_y*(  - np.sqrt(2)*omegac*int_v*K1 - 1j*k0*INT_y)
+    
+    pz = alffa_eff_z*(  - np.sqrt(2)*omegac*int_v*K1 + k0*INT_z )
+    
+    return px, py, pz
 
 
 

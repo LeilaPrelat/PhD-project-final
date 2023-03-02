@@ -58,7 +58,7 @@ print('Definir parametros del problema')
 zp_nano = 50
 
 
-d_nano = 1
+d_nano = 0.4
 
 title = r'$z_{\rm 0}$ = %i nm, $d_{\rm film}$ = %.2f nm' %(zp_nano,d_nano)
 

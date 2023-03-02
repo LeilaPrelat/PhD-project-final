@@ -66,7 +66,7 @@ b = -0.01
 d_thickness_disk_nano = 1
 D_disk_nano = 100 
 
-d_nano_film = 0.4
+d_nano_film = 1
 
 #omega0THz = 65
 #omega0 = omega0THz*1e12 

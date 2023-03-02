@@ -185,8 +185,8 @@ if graficar == 1:
     list_D = [8.8,15,10,20,120]
     
     
-    D_nano = 50
-    d_nano = 0.1
+    D_nano = 100
+    d_nano = 0.4
     
     labelpng = 'd%.2fnm_D%.2fnm' %(d_nano,D_nano)
 

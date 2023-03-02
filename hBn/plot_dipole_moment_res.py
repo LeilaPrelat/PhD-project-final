@@ -53,7 +53,7 @@ zp = 0.05
 b = -0.01
 
 
-d_nano = 10
+d_nano = 1
 #omega0THz = 65
 #omega0 = omega0THz*1e12 
 

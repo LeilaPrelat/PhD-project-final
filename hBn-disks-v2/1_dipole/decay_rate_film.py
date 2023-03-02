@@ -22,7 +22,7 @@ path_constants =  path_basic.replace('/1_dipole','')
 
 try:
     sys.path.insert(1, path_constants)
-    from dipole_moment import dipole_moment_ana, dipole_moment_num, dipole_moment_pole_aprox
+    from dipole_moment import dipole_moment_ana, dipole_moment_num, dipole_moment_pole_aprox,dipole_moment_anav2_for_decay_rate_resonance_dir
 except ModuleNotFoundError:
     print('dipole_moment.py no se encuentra en ' + path_basic)
     
@@ -116,11 +116,59 @@ def EELS_film_ana_f_div_gamma0(omegac,epsi_silica,d_nano_film,d_thickness_disk_n
     rta = np.imag(Green_self)*factor_final/factor_K    
     
 
-    return rta 
+    return 3*rta 
 
 
 
- 
+def EELS_film_ana_f_div_gamma0_v2(omegac,epsi_silica,d_nano_film,d_thickness_disk_nano,D_disk_nano,int_v,b,zp):     ## normalizando con la formula mas sencilla de Javier
+    """    
+    Parameters
+    ----------
+    omegac : omega/c = k0 en 1/micrometros    
+    epsi1 : epsilon del medio de arriba del plano
+    epsi2 : epsilon del medio de abajo del plano
+    hbmu : chemical potential in eV  
+    hbgama : collision frequency in eV
+    z : coordenada z
+    xD : coordenada x del dipolo 
+    yD : coordenada y del dipolo
+    zD : coordenada z del dipolo 
+    zp : posicion del plano (>0)
+    px : coordenada x del dipolo 
+    py : coordenada y del dipolo
+    pz : coordenada z del dipolo
+    Returns
+    -------
+    formula del potencial electric con QE approximation, rp con 
+    aproximacion del polo y con aprox de principal value para las integrales
+    con rp
+    """
+
+    E = omegac*aux
+    k1 = omegac*np.sqrt(epsi_silica(E))
+
+    px_v,py_v,pz_v = dipole_moment_ana(omegac,epsi_silica,d_nano_film,d_thickness_disk_nano,D_disk_nano,int_v,b,zp)# multiplicar por e/(2*pi*v)
+    
+
+#    print(px_v,py_v,pz_v)
+#    px_tot_2 = np.abs(px_v)**2 + np.abs(py_v)**2 + np.abs(pz_v)**2 
+    rtaself_x1, rtaself_y1, rtaself_z1  =  green_self_ana_exponential_function(omegac,epsi_silica,d_nano_film,zp)
+    rtaself_x2, rtaself_y2, rtaself_z2  =  green_self_num_integral_inside_light_cone(omegac,epsi_silica,d_nano_film,zp)
+    
+    rtaself_x, rtaself_y, rtaself_z  = rtaself_x1 - rtaself_x2, rtaself_y1 - rtaself_y2, rtaself_z1 - rtaself_z2
+    
+    Green_self = rtaself_x*(np.abs(px_v)**2) + rtaself_y*(np.abs(py_v)**2)  + rtaself_z*(np.abs(pz_v)**2)
+
+        
+    px_dir,py_dir,pz_dir = dipole_moment_anav2_for_decay_rate_resonance_dir(omegac,int_v,b,zp)
+    
+    denominador = np.abs(px_dir)**2 +  np.abs(py_dir)**2 +  np.abs(pz_dir)**2
+
+    rta = np.imag(Green_self*2*(k1**3)/denominador)    
+
+
+    return rta/(2*np.pi)
+
 
 
 
@@ -190,7 +238,7 @@ def EELS_film_num_f_div_gamma0(omegac,epsi_silica,d_nano_film,d_thickness_disk_n
     rta = np.imag(Green_self)*factor_final/factor_K    
     
 
-    return rta 
+    return 3*rta 
 
 
 #%%
@@ -259,7 +307,7 @@ def EELS_film_pole_aprox_f_div_gamma0(omegac,epsi_silica,d_nano_film,d_thickness
     rta = np.imag(Green_self)*factor_final/factor_K    
     
 
-    return rta 
+    return 3*rta 
 
 
 #%%

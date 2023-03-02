@@ -20,8 +20,8 @@ from scipy.signal import find_peaks
 #%%
 
 
-create_data = 0
-load_data = 1
+create_data = 1
+load_data = 0
 
 #%%
 
@@ -76,7 +76,7 @@ b = -0.01
 d_nano_film = 1
 
 D_disk_nano = 100
-d_thickness_disk_nano = 1
+d_thickness_disk_nano = 0.97
 #title1 = r'$\kappa$ = %.2f$\om
 
 int_v = 10
@@ -86,7 +86,7 @@ int_v = 10
 #title3 = r'$z_p$=%inm, px=%i, py=%i, pz=%i' %(zp*1e3,px,py,pz)
 title1 = r'b = %i nm, v = c/%i, d = %i nm, hBN' %(b*1e3,int_v, d_nano_film)
 #title2 = r'$\hbar\gamma_{in}$ = %i meV, $\epsilon_b$ = %i' %(hbgamma_DL*1e3,epsilon_b)
-labelp = r'_dfilm%.1fnm_ddisk%.1fnm_v%i' %(d_nano_film,d_thickness_disk_nano,int_v)
+labelp = r'_dfilm%.2fnm_ddisk%.2fnm_v%i' %(d_nano_film,d_thickness_disk_nano,int_v)
 title = title1 
 
 x1 = 0.09260651629072682 
