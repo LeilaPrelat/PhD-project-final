@@ -12,7 +12,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:export-ydpi="96"
    inkscape:export-xdpi="96"
-   inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/Scheme.pptx(9).png.png"
+   inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project-final/figures_paper/Scheme.pptx(9).png.png"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    sodipodi:docname="1_dipole.svg"
    viewBox="0 0 4000 2000"
@@ -2188,6 +2188,24 @@
        apply_no_weight="true"
        apply_with_weight="true"
        only_selected="false" />
+    <path
+       d="M227 -11Q149 -11 95 41T40 174Q40 262 87 322Q121 367 173 396T287 430Q289 431 329 431H367Q382 426 382 411Q382 385 341 385H325H312Q191 385 154 277L150 265H327Q340 256 340 246Q340 228 320 219H138V217Q128 187 128 143Q128 77 160 52T231 26Q258 26 284 36T326 57T343 68Q350 68 354 58T358 39Q358 36 357 35Q354 31 337 21T289 0T227 -11Z"
+       id="MJX-5-TEX-I-3F5" />
+    <path
+       d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"
+       id="MJX-5-TEX-N-31" />
+    <path
+       d="M227 -11Q149 -11 95 41T40 174Q40 262 87 322Q121 367 173 396T287 430Q289 431 329 431H367Q382 426 382 411Q382 385 341 385H325H312Q191 385 154 277L150 265H327Q340 256 340 246Q340 228 320 219H138V217Q128 187 128 143Q128 77 160 52T231 26Q258 26 284 36T326 57T343 68Q350 68 354 58T358 39Q358 36 357 35Q354 31 337 21T289 0T227 -11Z"
+       id="MJX-7-TEX-I-3F5" />
+    <path
+       d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"
+       id="MJX-7-TEX-N-33" />
+    <path
+       d="M227 -11Q149 -11 95 41T40 174Q40 262 87 322Q121 367 173 396T287 430Q289 431 329 431H367Q382 426 382 411Q382 385 341 385H325H312Q191 385 154 277L150 265H327Q340 256 340 246Q340 228 320 219H138V217Q128 187 128 143Q128 77 160 52T231 26Q258 26 284 36T326 57T343 68Q350 68 354 58T358 39Q358 36 357 35Q354 31 337 21T289 0T227 -11Z"
+       id="MJX-8-TEX-I-3F5" />
+    <path
+       d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"
+       id="MJX-8-TEX-N-32" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -2198,15 +2216,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1848"
-     inkscape:window-height="1016"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="2.56"
-     inkscape:cx="2220.8358"
-     inkscape:cy="580.76339"
-     inkscape:window-x="72"
-     inkscape:window-y="27"
+     inkscape:zoom="7.2407734"
+     inkscape:cx="2578.0451"
+     inkscape:cy="515.13839"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2"
      showguides="true"
@@ -2220,7 +2238,10 @@
      preserveAspectRatio="none"
      height="709.42999"
      width="573.01971"
-     transform="matrix(0.98727154,0.15904374,-0.98606365,0.1663685,0,0)" />
+     transform="matrix(0.98727154,0.15904374,-0.98606365,0.1663685,0,0)"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      inkscape:connector-curvature="0"
      id="path2424"
@@ -2255,36 +2276,40 @@
      inkscape:connector-curvature="0"
      id="path2434-3"
      style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 1891.3675,1581.3206 0.051,-28.9791 -565.2616,-89.8584 -0.361,24.346 z"
+     d="m 1891.3675,1600.6556 0.051,-48.3141 -565.2616,-89.8584 0.053,45.6144 z"
      sodipodi:nodetypes="ccccc"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      inkscape:connector-curvature="0"
      id="path2430-6"
      style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 1891.3678,1581.1825 0.051,-28.841 700.5991,-116.6255 0.2451,24.8014 z"
+     d="m 1891.3675,1600.6556 0.051,-48.3141 700.5991,-116.6255 0.026,41.2263 z"
      sodipodi:nodetypes="ccccc"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:66.66667938px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="1258.3572"
-     y="1490.1913"
+     x="1255.6228"
+     y="1501.5194"
      id="text9744"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan9742"
-       x="1258.3572"
-       y="1490.1913"
+       x="1255.6228"
+       y="1501.5194"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56.00001144px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">d</tspan></text>
   <g
      id="g1570"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"
-     transform="matrix(1.0272412,0,0,0.6336291,1259.2158,1189.3758)">
+     transform="matrix(1.0272412,0,0,0.9349766,1257.6533,1060.5184)"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png">
     <path
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
@@ -2310,7 +2335,8 @@
      id="g25564-6"
      transform="matrix(-0.35746933,-2.0727228,-2.2944989,0.36616185,3627.2071,3180.7396)"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png">
     <g
        id="g25593-9">
       <path
@@ -2342,7 +2368,8 @@
      y="1303.8247"
      id="text15528-9-3"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan15526-7-6"
        x="2238.8447"
@@ -2350,7 +2377,10 @@
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:56px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold Italic';fill:#005a00;fill-opacity:1;stroke:none;stroke-opacity:1">v</tspan></text>
   <g
      id="g16061-3-2-3-86"
-     transform="matrix(1.6891829,5.3475835e-4,-5.3475835e-4,1.6891829,-571.5203,897.33503)">
+     transform="matrix(1.6891829,5.3475835e-4,-5.3475835e-4,1.6891829,-571.5203,897.33503)"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png">
     <circle
        r="10"
        inkscape:export-ydpi="96"
@@ -2400,25 +2430,27 @@
      inkscape:export-ydpi="96" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:29.93194389px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.02040708"
-     x="1611.889"
-     y="1445.4032"
+     style="font-style:normal;font-weight:normal;font-size:27.31661415px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.93124813"
+     x="2517.5322"
+     y="1417.9329"
      id="text27826-6-7-6"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"
-     transform="scale(0.98000102,1.0204071)"><tspan
+     transform="scale(0.98000102,1.0204071)"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan27824-2-8-4"
-       x="1611.889"
-       y="1445.4032"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:1.02040708">x</tspan></text>
+       x="2517.5322"
+       y="1417.9329"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:51.10695267px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.93124813">x</tspan></text>
   <path
-     style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 1590.6158,1437.82 12.1534,-11.3248 9.6675,11.0486"
+     style="fill:none;stroke:#000000;stroke-width:3.65049648;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 2477.1891,1413.0289 11.0915,-10.3353 8.8228,10.0832"
      id="path25793"
      inkscape:connector-curvature="0"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      sodipodi:nodetypes="cc"
      style="fill:none;stroke:#000000;stroke-width:0.23414201;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-9-68-3-0)"
@@ -2427,9 +2459,10 @@
      inkscape:connector-curvature="0"
      inkscape:path-effect="#path-effect6250-6-1-8-0"
      inkscape:original-d="m 589.48252,547.56255 c 0.0661,-8.65985 0.098,-3.53931 0.16215,-12.19717"
-     transform="matrix(-1.2195084,12.151639,-5.9522845,-0.5188634,5411.4199,-5420.0545)"
+     transform="matrix(-1.1129528,11.089879,-5.4321985,-0.47352726,5964.1471,-4845.6329)"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      sodipodi:nodetypes="cc"
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -2438,9 +2471,10 @@
      inkscape:connector-curvature="0"
      inkscape:path-effect="#path-effect15754-5"
      inkscape:original-d="m 933.20313,2811.5127 c 0.66453,20.6143 1.32933,41.2291 1.99441,61.8443"
-     transform="matrix(-1.0306074,4.1679158,-0.97023446,-0.23991147,5195.2887,-1747.6846)"
+     transform="matrix(-0.94055718,3.8037405,-0.88545938,-0.218949,5766.9006,-1494.1395)"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      sodipodi:nodetypes="cc"
      style="fill:none;stroke:#000000;stroke-width:0.23414201;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-9-68-3-0-6)"
@@ -2449,9 +2483,10 @@
      inkscape:connector-curvature="0"
      inkscape:path-effect="#path-effect6250-6-1-8-0-6"
      inkscape:original-d="m 589.48252,547.56255 c 0.0661,-8.65985 0.098,-3.53931 0.16215,-12.19717"
-     transform="matrix(-1.9331807,-12.058704,5.8866598,-1.0228129,-506.31856,9125.2425)"
+     transform="matrix(-1.7642674,-11.005064,5.3723078,-0.93344373,563.47622,8428.7561)"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      sodipodi:nodetypes="cc"
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -2460,30 +2495,33 @@
      inkscape:connector-curvature="0"
      inkscape:path-effect="#path-effect15754-5-2"
      inkscape:original-d="m 933.20313,2811.5127 c 0.66453,20.6143 1.32933,41.2291 1.99441,61.8443"
-     transform="matrix(-0.07116067,-4.2928557,0.99931878,-0.01656525,-1237.8846,5519.9929)"
+     transform="matrix(-0.06494294,-3.9177637,0.91200243,-0.01511785,-104.1686,5138.5183)"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:29.93194389px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.02040708"
-     x="1427.2937"
-     y="1422.6761"
+     style="font-style:normal;font-weight:normal;font-size:27.31661415px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.93124813"
+     x="2349.0662"
+     y="1397.1915"
      id="text27826-6-7-6-3"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"
-     transform="scale(0.98000102,1.0204071)"><tspan
+     transform="scale(0.98000102,1.0204071)"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan27824-2-8-4-3"
-       x="1427.2937"
-       y="1422.6761"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:1.02040708">y</tspan></text>
+       x="2349.0662"
+       y="1397.1915"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:51.10695267px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.93124813">y</tspan></text>
   <path
-     style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 1409.1596,1415.734 12.1534,-11.3248 9.6674,11.0486"
+     style="fill:none;stroke:#000000;stroke-width:3.65049648;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 2311.5878,1392.8726 11.0915,-10.3352 8.8227,10.0832"
      id="path25793-8"
      inkscape:connector-curvature="0"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:74.83187103px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.80619526"
@@ -2491,7 +2529,8 @@
      y="1400.6732"
      id="text9744-6-0"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan9742-1-6"
        x="2154.5732"
@@ -2504,12 +2543,13 @@
      y="1406.4214"
      id="text27822-2"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan27820-6"
        x="2185.8989"
        y="1406.4214"
-       style="font-size:30.19115829px;stroke-width:2.80619526">0</tspan></text>
+       style="font-size:30.19115829px;stroke-width:2.80619526">D</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:49.1204834px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.45602393"
@@ -2517,7 +2557,8 @@
      y="1342.8156"
      id="text27826-1"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan27824-8"
        x="2043.6808"
@@ -2530,7 +2571,8 @@
      y="1352.0254"
      id="text9112-7"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan9110-9"
        x="1922.6653"
@@ -2547,7 +2589,8 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"
      inkscape:transform-center-x="-96.64126"
-     inkscape:transform-center-y="-8.8099911" />
+     inkscape:transform-center-y="-8.8099911"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      style="fill:none;stroke:#000000;stroke-width:0.29903844;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-9-49);marker-end:url(#Arrow1Lend-6-0)"
      d="m 589.25782,555.54687 0.19531,-25.97656"
@@ -2557,7 +2600,8 @@
      inkscape:original-d="m 589.25782,555.54687 c 0.0661,-8.65985 0.1312,-17.3187 0.19531,-25.97656"
      transform="matrix(5.9694286,-0.0743921,0.03230411,2.7002472,-1502.1563,-94.500778)"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1.58768749;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 46.777344,450.85937 c 0.02208,3.5642 0.04417,7.12944 0.06626,10.69573"
@@ -2568,20 +2612,22 @@
      transform="matrix(-2.7542763,0.10702236,0.01624422,5.3540329,2154.8887,-1120.642)"
      sodipodi:nodetypes="cc"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      inkscape:export-ydpi="96"
      inkscape:export-xdpi="96"
-     transform="matrix(-12.211926,-0.13560235,-0.01176041,-5.9748448,8713.0308,4746.0099)"
+     transform="matrix(-11.144898,-0.12375398,-0.01073283,-5.4527875,8977.2769,4432.1628)"
      inkscape:original-d="m 589.48252,547.56255 c 0.0661,-8.65985 0.098,-3.53931 0.16215,-12.19717"
      inkscape:path-effect="#path-effect6250-6-1-8-0-9"
      inkscape:connector-curvature="0"
      id="path6248-2-20-12-2-2"
      d="m 589.48252,547.56255 0.16215,-12.19717"
      style="fill:none;stroke:#000000;stroke-width:0.23414201;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-9-68-3-0-8)"
-     sodipodi:nodetypes="cc" />
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
-     transform="matrix(-4.2368636,-0.69473781,0.16172556,-0.98628458,5004.857,4888.5964)"
+     transform="matrix(-3.8666639,-0.63403449,0.14759465,-0.9001071,5593.108,4562.2907)"
      inkscape:original-d="m 933.20313,2811.5127 c 0.66453,20.6143 1.32933,41.2291 1.99441,61.8443"
      inkscape:path-effect="#path-effect15754-5-20"
      inkscape:connector-curvature="0"
@@ -2590,28 +2636,31 @@
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      sodipodi:nodetypes="cc"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:29.93194389px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.02040708"
-     x="1551.866"
-     y="1396.3988"
+     style="font-style:normal;font-weight:normal;font-size:27.31661415px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.93124813"
+     x="2462.7537"
+     y="1373.2102"
      id="text27826-6-7-6-7"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"
-     transform="scale(0.98000102,1.0204071)"><tspan
+     transform="scale(0.98000102,1.0204071)"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"><tspan
        sodipodi:role="line"
        id="tspan27824-2-8-4-5"
-       x="1551.866"
-       y="1396.3988"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:1.02040708">z</tspan></text>
+       x="2462.7537"
+       y="1373.2102"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:51.10695267px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.93124813">z</tspan></text>
   <path
-     style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 1530.6884,1387.8155 12.1534,-11.3248 9.6675,11.0486"
+     style="fill:none;stroke:#000000;stroke-width:3.65049648;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 2422.4979,1367.3935 11.0915,-10.3352 8.8228,10.0832"
      id="path25793-9"
      inkscape:connector-curvature="0"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1.87730455;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="M 428.80612,1319.1539 C 715.2516,1268.0907 1001.696,1217.0276 1288.1391,1165.9648"
@@ -2622,7 +2671,8 @@
      transform="matrix(0.81481506,0.00154807,-0.0013033,0.78352463,978.47847,428.22972)"
      sodipodi:nodetypes="cc"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      style="fill:none;stroke:#000000;stroke-width:2.37408285;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="M 428.80612,1319.1539 C 715.2516,1268.0907 1001.696,1217.0276 1288.1391,1165.9648"
@@ -2633,7 +2683,8 @@
      transform="matrix(0.65783892,-0.00119897,-0.00105222,-0.60683391,1745.8567,2144.8074)"
      sodipodi:nodetypes="cc"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      style="fill:none;stroke:#000000;stroke-width:0.29903844;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-9-49-7);marker-end:url(#Arrow1Lend-6-0-3)"
      d="m 589.25782,555.54687 0.19531,-25.97656"
@@ -2643,7 +2694,8 @@
      inkscape:original-d="m 589.25782,555.54687 c 0.0661,-8.65985 0.1312,-17.3187 0.19531,-25.97656"
      transform="matrix(5.9694286,-0.0743921,0.03230411,2.7002472,-1390.7293,-36.78901)"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1.58768749;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 46.777344,450.85937 c 0.02208,3.5642 0.04417,7.12944 0.06626,10.69573"
@@ -2654,5 +2706,126 @@
      transform="matrix(-2.7542763,0.10702236,0.01624422,5.3540329,2266.3157,-1062.9302)"
      sodipodi:nodetypes="cc"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     inkscape:export-ydpi="96"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png" />
+  <g
+     id="g2184"
+     transform="matrix(0.06523782,0.00879902,0.00879902,-0.06523782,1402.1772,1442.2881)"
+     style="fill:currentColor;stroke:currentColor;stroke-width:0"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <g
+       id="g2182"
+       data-mml-node="math">
+      <g
+         id="g2180"
+         data-mml-node="msub"
+         transform="rotate(8.475172,-565.09451,-3404.0822)">
+        <g
+           id="g2174"
+           data-mml-node="mi">
+          <use
+             id="use2172"
+             xlink:href="#MJX-5-TEX-I-3F5"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+        </g>
+        <g
+           id="g2178"
+           transform="matrix(0.707,0,0,0.707,406,-150)"
+           data-mml-node="mn">
+          <use
+             id="use2176"
+             xlink:href="#MJX-5-TEX-N-31"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g2217"
+     transform="matrix(0.0580459,0.01239779,0.01239779,-0.0580459,1392.7067,1564.8946)"
+     style="fill:currentColor;stroke:currentColor;stroke-width:0"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <g
+       id="g2215"
+       data-mml-node="math"
+       transform="rotate(8.1657377,1306.0869,-2653.0031)">
+      <g
+         id="g2213"
+         data-mml-node="msub">
+        <g
+           id="g2207"
+           data-mml-node="mi"
+           transform="rotate(2.2577919,380.78218,128.69584)">
+          <use
+             id="use2205"
+             xlink:href="#MJX-7-TEX-I-3F5"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+        </g>
+        <g
+           id="g2211"
+           transform="matrix(0.70645115,0.02785276,-0.02785276,0.70645115,416.95984,-148.79017)"
+           data-mml-node="mn">
+          <use
+             id="use2209"
+             xlink:href="#MJX-7-TEX-N-33"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g2250"
+     transform="matrix(0.06197417,0.00269876,0.00269876,-0.06197417,1366.503,1504.7047)"
+     style="fill:currentColor;stroke:currentColor;stroke-width:0"
+     inkscape:export-filename="/home/lprelat/Desktop/PhD-ICFO/PhD-project/figures_paper/g2250.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <g
+       id="g2248"
+       data-mml-node="math">
+      <g
+         id="g2246"
+         data-mml-node="msub">
+        <g
+           id="g2240"
+           data-mml-node="mi">
+          <use
+             id="use2238"
+             xlink:href="#MJX-8-TEX-I-3F5"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+        </g>
+        <g
+           id="g2244"
+           transform="matrix(0.707,0,0,0.707,406,-150)"
+           data-mml-node="mn">
+          <use
+             id="use2242"
+             xlink:href="#MJX-8-TEX-N-32"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+        </g>
+      </g>
+    </g>
+  </g>
 </svg>
