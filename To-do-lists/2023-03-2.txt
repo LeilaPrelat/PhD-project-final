@@ -1,3 +1,5 @@
 *2023/03/02 jueves
 
-la intensidad de Gamma_SP/Gamma_EELS cambia muuucho con thickness d_film y d_disk
+- la intensidad de Gamma_SP/Gamma_EELS cambia muuucho con thickness d_film y d_disk
+
+
