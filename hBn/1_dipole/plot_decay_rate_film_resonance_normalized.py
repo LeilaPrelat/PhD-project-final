@@ -81,7 +81,7 @@ d_nano = 1
 title4 = r'b = %i nm' %(b*1e3)
 labelp = r'_res_d%inm' %(d_nano) 
 
-N = 350
+N = 200
 
 
 
@@ -159,6 +159,7 @@ if plot_vs_zp == 1 :
 
     else:
         listx = np.linspace(5,700,N)
+    listx = np.linspace(10,1200,N)
     
     
 #    print(minimum_function(E0,int_v0)*1e3)
@@ -249,7 +250,10 @@ plt.plot(listx_2,np.array(listy_im_ana),'-',ms = ms,color = 'purple')
 #plt.plot(np.ones(10)*maxi2, np.array(listy_aux)*1e-12,'-k',label = r'$z^{\rm opt}_{\rm o}$/$\lambda_{\rm p}$')
 #plt.plot([],[],'-w',label = r'$\omega/\omega_{\parallel}$=%.2f'%(omega_omega_D))
 #plt.plot([],[],'-w',label = r'$\omega/\omega_{\rm D}$=%.2f'%(omega_omega_D))
-plt.text(3.1,0.11,r'$\omega/\omega_{\parallel}$ = %.2f'%(omega_omega_D),fontsize=tamlegend)
+if E0 == 0.175: 
+    plt.text(3.1,0.11,r'$\omega/\omega_{\parallel}$ = %.2f'%(omega_omega_D),fontsize=tamlegend)
+else:
+    plt.text(1.2,0.1,r'$\omega/\omega_{\parallel}$ = %.2f'%(omega_omega_D),fontsize=tamlegend)
 #plt.legend(loc = 'best',markerscale=mk,fontsize=tamlegend,frameon=False,handletextpad=hp, handlelength=1)
 plt.tight_layout()
 #if plot_vs_c == 1:

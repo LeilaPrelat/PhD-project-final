@@ -76,7 +76,7 @@ b = -0.01
 d_nano_film = 1
 
 D_disk_nano = 100
-d_thickness_disk_nano = 0.97
+d_thickness_disk_nano = 0.9
 #title1 = r'$\kappa$ = %.2f$\om
 
 int_v = 10
@@ -192,7 +192,7 @@ def function_imag_ana(energy0): ## devuelve el zp optimo en nanometros
         list_zp_nano = np.linspace(0.001,3.5,N)
     else:
         list_zp_nano = np.linspace(1,10,N)#         
-        list_zp_nano = np.linspace(0.5,20,N) # mas preciso          
+        list_zp_nano = np.linspace(1,18,N) # mas preciso          
         
     listy = []
     for zp_nano in list_zp_nano:

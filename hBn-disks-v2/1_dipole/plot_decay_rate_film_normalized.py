@@ -74,14 +74,14 @@ b = -0.01
 d_nano_film = 1
 
 D_disk_nano = 100
-d_thickness_disk_nano = 0.96
+d_thickness_disk_nano = 0.9
 #title1 = r'$\kappa$ = %.2f$\omega_0$, $\kappa_r$ = %.2f$\kappa$, $E_0$=%i meV' %(kappa_factor_omega0, kappa_r_factor, energy0_pol)     
 #title2 = r'$\hbar\mu$ = %.2feV, $\hbar\gamma$ = %.4feV' %(hbmu,hbgama) 
 #title3 = r'$z_p$=%inm, px=%i, py=%i, pz=%i' %(zp*1e3,px,py,pz)
 title4 = r'b = %i nm' %(b*1e3)
 labelp = r'_res_dfilm%.2fnm_ddisk%.2fnm_D%inm' %(d_nano_film,d_thickness_disk_nano,D_disk_nano) 
 
-N = 350
+N = 200
 
 
 def function_imag_ana(energy0,int_v,zp_nano):
@@ -173,7 +173,7 @@ if plot_vs_zp == 1 :
         listx = np.linspace(16,18,N)
         
     elif E0 == 0.175:
-        listx = np.linspace(7.3,9.3,N)
+        listx = np.linspace(7.3,15,N)
 
 
     elif E0 == 0.195:

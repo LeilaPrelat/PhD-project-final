@@ -44,7 +44,7 @@ aux = c*hb
 #%% 
 
 # normalizado con el paper 149 
-def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3(omegac,epsi1,epsi2,hbmu,hbgama,int_v,zp,a,b,n):     
+def decay_rate_theta_inf_dipoles_ana_res_div_gamma0(omegac,epsi1,epsi2,hbmu,hbgama,int_v,zp,a,b,n):     
     """    
     Parameters
     ----------
@@ -111,8 +111,7 @@ def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3(omegac,epsi1,epsi2,hbmu,h
 
     
     factor_K = K0**2 + K1**2  ## decay rate de 1 dipolo # pero sin el "e/hbar" se cancela con el momento dipolar^2
-
-    
+    seno_theta_n = den/kp    
 #    px_dir,py_dir,pz_dir = dipole_moment_anav2_for_decay_rate_resonance_dir(omegac,int_v,b,zp)        
 #    denominador = np.abs(px_dir)**2 +  np.abs(py_dir)**2 +  np.abs(pz_dir)**2
 
@@ -121,13 +120,23 @@ def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3(omegac,epsi1,epsi2,hbmu,h
    
     k_prima = omegac*np.sqrt(epsi1)
         
-    rta = (np.abs(phi_n)**2)*cte_formula*k_prima*(int_v**(-2))/factor_K    
-        
-    return rta
+    rta = 2*epsi1*(np.abs(phi_n)**2)*cte_formula*k_prima*(int_v**(-2))/(factor_K*seno_theta_n)
+    
+    
+    v = c/int_v
+    
+    imag_alpha = 3*epsi1/(2*k_prima**3)
+
+    factor_gamma0 = (2*omegac*int_v/v)**2
+    Gamma_EELS = factor_gamma0*(K0**2 + K1**2)*imag_alpha/np.pi  ## decay rate de 1 dipolo # pero sin el "e/hbar" se cancela con el momento dipolar^2
+       
+    Gamma_SP = a*epsi1*np.abs(phi_n)**2/(np.pi*np.abs(Rp)*seno_theta_n*4*np.pi**2*v**2)
+    
+    return Gamma_SP/Gamma_EELS
 
 
 
-def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v4(omegac,epsi1,epsi2,hbmu,hbgama,int_v,zp,a,b,n):     
+def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v2(omegac,epsi1,epsi2,hbmu,hbgama,int_v,zp,a,b,n):     
     """    
     Parameters
     ----------
@@ -205,7 +214,7 @@ def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v4(omegac,epsi1,epsi2,hbmu,h
    
     k_prima = omegac*np.sqrt(epsi1)
         
-    rta = (np.abs(phi_n)**2)*cte_formula*k_prima*(int_v**(-2))/(factor_K*seno_theta_n)
+    rta = 2*epsi1*(np.abs(phi_n)**2)*cte_formula*k_prima*(int_v**(-2))/(factor_K*seno_theta_n)
         
     return 12*rta
 
