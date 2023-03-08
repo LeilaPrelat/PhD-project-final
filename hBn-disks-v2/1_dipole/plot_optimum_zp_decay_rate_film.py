@@ -20,8 +20,8 @@ from scipy.signal import find_peaks
 #%%
 
 
-create_data = 1
-load_data = 0
+create_data = 0
+load_data = 1
 
 #%%
 
@@ -300,7 +300,7 @@ if load_data == 1:
         rta = listy[ind]/list_lambda_p[ind]
         list_zp_div_lambda_p.append(rta)
     
-    labely = 'Surface-dipole' + '\n' +  r'distance  $z_{\rm 0}$/$\lambda_{\rm p}$'
+    labely = 'hBN film-dipole' + '\n' +  r'distance  $z_{\rm 0}$/$\lambda_{\rm p}$'
     labelx = r'Frequency $\omega/\omega_\parallel$'
     
     omega_D = 170.1*1e-3  ## eV sin el hbar porque se cancela con el listx 
@@ -311,7 +311,7 @@ if load_data == 1:
         lim = -1
         
     elif d_nano_film == 1:
-        list_zp_div_lambda_p = savgol_filter(list_zp_div_lambda_p, 15, 3)
+        list_zp_div_lambda_p = savgol_filter(list_zp_div_lambda_p, 99, 3)
         lim = -1
 
     graph(title,labelx,labely,tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)

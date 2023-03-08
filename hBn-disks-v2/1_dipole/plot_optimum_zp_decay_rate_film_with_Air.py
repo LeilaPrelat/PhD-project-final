@@ -76,7 +76,7 @@ b = -0.01
 d_nano_film = 1
 
 D_disk_nano = 100
-d_thickness_disk_nano = 1
+d_thickness_disk_nano = 0.9
 #title1 = r'$\kappa$ = %.2f$\om
 
 int_v = 10

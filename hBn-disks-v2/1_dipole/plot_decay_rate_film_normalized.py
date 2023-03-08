@@ -74,12 +74,12 @@ b = -0.01
 d_nano_film = 1
 
 D_disk_nano = 100
-d_thickness_disk_nano = 0.9
+d_thickness_disk_nano = 0.955
 #title1 = r'$\kappa$ = %.2f$\omega_0$, $\kappa_r$ = %.2f$\kappa$, $E_0$=%i meV' %(kappa_factor_omega0, kappa_r_factor, energy0_pol)     
 #title2 = r'$\hbar\mu$ = %.2feV, $\hbar\gamma$ = %.4feV' %(hbmu,hbgama) 
 #title3 = r'$z_p$=%inm, px=%i, py=%i, pz=%i' %(zp*1e3,px,py,pz)
 title4 = r'b = %i nm' %(b*1e3)
-labelp = r'_res_dfilm%.2fnm_ddisk%.2fnm_D%inm' %(d_nano_film,d_thickness_disk_nano,D_disk_nano) 
+labelp = r'_res_dfilm%.2fnm_ddisk%.3fnm_D%inm' %(d_nano_film,d_thickness_disk_nano,D_disk_nano) 
 
 N = 200
 
@@ -149,7 +149,7 @@ if plot_vs_zp == 1 :
 #    E0 = 0.175
 #    E0 = 0.195
 #    
-    labelx = r'Surface-dipole distance, $z_{\rm 0}$/$\lambda_{\rm p}$'   
+    labelx = r'hBN film-dipole distance, $z_{\rm 0}$/$\lambda_{\rm p}$'   
     title4 = title4 + ', ' + r'v = c/%i, $\hbar\omega$ = %i eV' %(int_v0,E0)
     label1 = 'vs_zp' + labelp + '_E%imeV' %(E0*1e3)
 #    listx = np.linspace(0.0001,2,N)
