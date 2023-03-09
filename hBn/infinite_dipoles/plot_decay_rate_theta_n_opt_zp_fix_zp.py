@@ -30,7 +30,7 @@ if not os.path.exists(path_save):
 err = 'decay_rate_theta_n.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_theta_n import decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3
+    from decay_rate_theta_n import decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v2, decay_rate_theta_inf_dipoles_ana_res_div_gamma0
 except ModuleNotFoundError:
     print(err)
 
@@ -113,7 +113,7 @@ f2 = interp1d(listx, listz)
 
 N = 225
 lim1,lim2 = 18,-60
-lim1,lim2 = 0,-77
+lim1,lim2 = 0,-50
 listx_2 = np.linspace(listx[lim1], listx[lim2], N)
 
 
@@ -147,7 +147,7 @@ def function_real_ana(energy0_meV,zp_nano,Nmax):
     omegac0 = energy0_meV/(c*hb)  
     zp = zp_nano*1e-3
          
-    rta = decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3(omegac0,epsi1,epsi3,d_nano,int_v,zp,a,b,Nmax)
+    rta = decay_rate_theta_inf_dipoles_ana_res_div_gamma0(omegac0,epsi1,epsi3,d_nano,int_v,zp,a,b,Nmax)
 
     return rta
 

@@ -85,7 +85,6 @@ def decay_rate_theta_inf_dipoles_ana_res_div_gamma0(omegac,epsi1,epsi2,hbmu,hbga
 #            
     kx = omegac*int_v + 2*np.pi*n/a
     
-    delta_n = 2*np.pi/a
 #    print(delta_n/kx)
 
     den = np.sqrt(kp**2 - kx**2)
@@ -96,43 +95,40 @@ def decay_rate_theta_inf_dipoles_ana_res_div_gamma0(omegac,epsi1,epsi2,hbmu,hbga
    # return np.imag(final_2*cte*kp*np.cos(theta))
     phi_n = -np.exp(-2*kp_2*zp)*Rp*kp*(px*kx*term_kp/den + py*term_kp + 1j*pz*term_kp_2/den )/(4*np.pi*a)
     
-    cte_formula = a/(48*(np.pi**2)*Rp)
-    cte_formula = 12*np.pi*a/(Rp) ## hay un extra 1/(2pi) en la formula de phi. necesario para silver 
-      
-#    cte_formula = a/(12*Rp) ## hay un extra 1/(2pi) en la formula de phi
-    
-#    cte_formula = a*np.pi/Rp  ## hay un extra 1/(2pi) en la formula de phi. necesario para grafeno  
+#    cte_formula = a/(48*(np.pi**2)*Rp)
+#    cte_formula = 12*np.pi*a/(Rp) ## hay un extra 1/(2pi) en la formula de phi. necesario para silver 
+#      
+##    cte_formula = a/(12*Rp) ## hay un extra 1/(2pi) en la formula de phi
+#    
+##    cte_formula = a*np.pi/Rp  ## hay un extra 1/(2pi) en la formula de phi. necesario para grafeno  
+##
+#    
+#    factor_K = K0**2 + K1**2  ## decay rate de 1 dipolo # pero sin el "e/hbar" se cancela con el momento dipolar^2
+#  
+##    px_dir,py_dir,pz_dir = dipole_moment_anav2_for_decay_rate_resonance_dir(omegac,int_v,b,zp)        
+##    denominador = np.abs(px_dir)**2 +  np.abs(py_dir)**2 +  np.abs(pz_dir)**2
 #
+##    cte_extra = (a*omegac)**4
+#    extra_cte_adimensional = a*omegac ## para poder comparar con diferentes materiales y que no dependa del periodo "a" 
 
+#    rta = 2*epsi1*(np.abs(phi_n)**2)*cte_formula*k_prima*(int_v**(-2))/(factor_K*seno_theta_n)
 
     arg = np.abs(b)*omegac*int_v
     K1 = special.kn(1,arg)
     K0 = special.kn(0,arg)
-
     
-    factor_K = K0**2 + K1**2  ## decay rate de 1 dipolo # pero sin el "e/hbar" se cancela con el momento dipolar^2
-    seno_theta_n = den/kp    
-#    px_dir,py_dir,pz_dir = dipole_moment_anav2_for_decay_rate_resonance_dir(omegac,int_v,b,zp)        
-#    denominador = np.abs(px_dir)**2 +  np.abs(py_dir)**2 +  np.abs(pz_dir)**2
-
-#    cte_extra = (a*omegac)**4
-    extra_cte_adimensional = a*omegac ## para poder comparar con diferentes materiales y que no dependa del periodo "a" 
-   
-    k_prima = omegac*np.sqrt(epsi1)
-        
-    rta = 2*epsi1*(np.abs(phi_n)**2)*cte_formula*k_prima*(int_v**(-2))/(factor_K*seno_theta_n)
-    
-    
+    seno_theta_n = den/kp     
+    k_prima = omegac*np.sqrt(epsi1)    
     v = c/int_v
     
-    imag_alpha = 3*epsi1/(2*k_prima**3)
+    imag_alpha = 3*epsi1/(2*k_prima**3) ## = np.imag(-3*epsi1/(2*1j*k_prima**3))
 
     factor_gamma0 = (2*omegac*int_v/v)**2
     Gamma_EELS = factor_gamma0*(K0**2 + K1**2)*imag_alpha/np.pi  ## decay rate de 1 dipolo # pero sin el "e/hbar" se cancela con el momento dipolar^2
        
-    Gamma_SP = a*epsi1*np.abs(phi_n)**2/(np.pi*np.abs(Rp)*seno_theta_n*4*np.pi**2*v**2)
+    Gamma_SPn = a*epsi1*np.abs(phi_n)**2/(np.pi*np.abs(Rp)*seno_theta_n*4*np.pi**2*v**2)
     
-    return Gamma_SP/Gamma_EELS
+    return Gamma_SPn*5*1e4/Gamma_EELS
 
 
 

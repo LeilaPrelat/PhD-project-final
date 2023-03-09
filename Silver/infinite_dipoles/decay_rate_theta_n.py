@@ -42,7 +42,7 @@ aux = c*hb
 
 #%%
 
-def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v2(omegac,epsi1,epsi3,d_nano,int_v,zp,a,b,n):     
+def decay_rate_theta_inf_dipoles_ana_res_div_gamma0(omegac,epsi1,epsi3,d_nano,int_v,zp,a,b,n):     
     """    
     Parameters
     ----------
@@ -85,55 +85,37 @@ def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v2(omegac,epsi1,epsi3,d_nano
 #    list_dipoles = np.linspace(-Nmax,Nmax,2*Nmax + 1)
 #            
     kx = omegac*int_v + 2*np.pi*n/a     
-#    expo_kx = np.exp(1j*kx*x)
-#
-    ### cte que falta en dip moment : e/(2*np.pi*v)
-#    charge_e_cgs = 1.602176634*1e-20
-#    
-#    hbar_cgs = 1.054571817*1e-27
-    
-    v = c/int_v
-    cte_dip = 1/(2*np.pi*v)
-    
-    px,py,pz = px*cte_dip, py*cte_dip, pz*cte_dip
-    
-#    cte_final = (charge_e_cgs/(hbar_cgs*c))**2
-#    print(cte_final)
-#    
-#    ky = kp*np.sin(theta)
 
-#    cte = 1/((2*np.pi)**2*a)
-    
-#    cte2 = alfac*int_v*1e15/(np.pi) ## cambio de unidades + agregar lo que faltaba en el momento dipolar
     den = np.sqrt(kp**2 - kx**2)
-   # return np.imag(final_2*cte*kp*np.cos(theta))
-    phi_n = np.exp(-2*kp*zp)*Rp*kp*(px*kx/den + py + 1j*pz*kp/den )/(2*np.pi*a)
+    kp_2 = np.sqrt(kp**2)
+    term_kp = 1 + kp/kp_2
+    term_kp_2 = kp_2 + kp
+    phi_n = -np.exp(-2*kp_2*zp)*Rp*kp*(px*kx*term_kp/den + py*term_kp + 1j*pz*term_kp_2/den )/(4*np.pi*a)
     
-    rta = a*np.abs(phi_n)**2/(2*np.pi*np.abs(Rp))
-    
-#    cte_aux = cte_aux*1e9 ### cambiar unidades
 
-    gamma = np.sqrt(1 - (int_v)**(-2))**(-1)
-    alpha = -3*epsi1/(4*1j*k1**3)
-
-    arg = np.abs(b)*omegac*int_v/gamma
+    arg = np.abs(b)*omegac*int_v
     K1 = special.kn(1,arg)
     K0 = special.kn(0,arg)
     
-#    print(K1)
-   
+    seno_theta_n = den/kp     
+    k_prima = omegac*np.sqrt(epsi1)    
+    v = c/int_v
+    
+    imag_alpha = 3*epsi1/(2*k_prima**3) ## = np.imag(-3*epsi1/(2*1j*k_prima**3))
 
-    factor_gamma0 = (2*omegac*int_v/(v*gamma))**2
-    gamma0 = factor_gamma0*(K0**2/gamma**2 + K1**2)*np.imag(alpha)/np.pi  ## decay rate de 1 dipolo # pero sin el "e/hbar" se cancela con el momento dipolar^2
+    factor_gamma0 = (2*omegac*int_v/v)**2
+    Gamma_EELS = factor_gamma0*(K0**2 + K1**2)*imag_alpha/np.pi  ## decay rate de 1 dipolo # pero sin el "e/hbar" se cancela con el momento dipolar^2
+       
+    Gamma_SPn = a*epsi1*np.abs(phi_n)**2/(np.pi*np.abs(Rp)*seno_theta_n*4*np.pi**2*v**2)
     
-    
-    return np.real(rta/(gamma0*hb))
+    return Gamma_SPn*1e7/Gamma_EELS
+
 
 
 
 
 # normalizado con el paper 149 
-def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3(omegac,epsi1,epsi3,d_nano,int_v,zp,a,b,n):     
+def decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v2(omegac,epsi1,epsi3,d_nano,int_v,zp,a,b,n):     
     """    
     Parameters
     ----------
