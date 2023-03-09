@@ -125,7 +125,7 @@ f2 = interp1d(listx, listz)
 
 N = 100
 lim1,lim2 = 18,-60
-lim1,lim2 = 0,-58
+lim1,lim2 = 0,-20
 #lim1,lim2 = 14,-1
 listx_2 = np.linspace(listx[lim1], listx[lim2], N)
 #listx_2 = np.linspace(listx[lim1], 0.2, N)
