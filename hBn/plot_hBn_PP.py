@@ -33,25 +33,27 @@ except ModuleNotFoundError:
 
 #%%
     
-tamfig = (4.5,3.5)
-tamlegend = 12
-tamletra = 12
-tamtitle = 11
-tamnum = 10
-labelpady = -1.5
-labelpadx = 2
-pad = 0
-mk = 2
-ms = 4
+tamfig = [2.5, 2]
+tamletra = 9
+tamtitle  = 8
+tamnum = 7
+tamlegend = 8
+labelpady = 2
+labelpadx = 3
+pad = 3
+mk = 1
+ms = 2
 hp = 0.3
-length_marker = 1
+length_marker = 0
+dpi = 500
+
 
 def graph(title,labelx,labely,tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad):
     plt.figure(figsize=tamfig)
     plt.xlabel(labelx,fontsize=tamletra,labelpad =labelpadx)
     plt.ylabel(labely,fontsize=tamletra,labelpad =labelpadx)
-    plt.tick_params(labelsize = tamnum, pad = pad)
-    plt.title(title,fontsize=int(tamtitle*0.9))
+    plt.tick_params(labelsize = tamnum, length = 2 , width=1, direction="in", pad = pad)
+#    plt.title(title,fontsize=int(tamtitle*0.9))
 
     return   
 
@@ -102,7 +104,7 @@ list_ind2.append(list_ind[-1])
 #Emax = listx[np.argmax(listy_re_num)]
 #print(Emax)
 
-labelx = r'$\hbar\omega$ [eV]'
+labelx = r'$\hbar\omega$ (eV)'
 labely1 = r'Re{$\epsilon$}'
 labely2 = r'Im{$\epsilon$}'
 title = 'hBn'
@@ -110,13 +112,13 @@ title = 'hBn'
 #%%
 graph(title,labelx,labely1,tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)
 #    plt.plot(listx,listy_re_ana,'.',ms = ms,color = 'purple',label = 'analytical')
-plt.plot(listx,listy_re_x,'.-',ms = ms,color = 'lightseagreen',label = r'Re{$\epsilon_x$}')
-plt.plot(listx,listy_re_z,'.-',ms = 3,color = 'darkred',label = r'Re{$\epsilon_z$}')
+plt.plot(listx,listy_re_x,'--',lw = ms,color = 'lightseagreen',label = r'Re{$\epsilon_{\parallel}$}')
+plt.plot(listx,listy_re_z,'-',ms = ms,color = 'darkred',label = r'Re{$\epsilon_{\perp}$}')
 ejey_aux = np.linspace(np.min([np.min(listy_re_z),np.min(listy_re_x)]), np.max([np.max(listy_re_z),np.max(listy_re_x)]) , 10)
 for ind in list_ind2:
     plt.plot(listx[ind]*np.ones(10), ejey_aux,'--',color = 'grey' )
     print(listx[ind])
-plt.legend(loc = 'best',markerscale=2,fontsize=tamlegend,frameon=0,handletextpad=0.2, handlelength=length_marker)
+plt.legend(loc = [0.02,0.95],ncol = 2,markerscale=2,fontsize=tamlegend,frameon=0,handletextpad=0.2, handlelength=2)
 plt.tight_layout()
 os.chdir(path_basic)
 plt.savefig( 'Re_epsilon_hBn' + '.png', format='png')   
@@ -125,8 +127,8 @@ plt.savefig( 'Re_epsilon_hBn' + '.png', format='png')
 #%%
 graph(title,labelx,labely2,tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)
 #    plt.plot(listx,listy_re_ana,'.',ms = ms,color = 'purple',label = 'analytical')
-plt.plot(listx,listy_im_x,'.-',ms = ms,color = 'lightseagreen',label = r'Im{$\epsilon_x$}')
-plt.plot(listx,listy_im_z,'.-',ms = 3,color = 'darkred',label = r'Im{$\epsilon_z$}')
+plt.plot(listx,listy_im_x,'--',lw = ms,color = 'lightseagreen',label = r'Im{$\epsilon_{\parallel}$}')
+plt.plot(listx,listy_im_z,'.-',ms = ms,color = 'darkred',label = r'Im{$\epsilon_{\perp}$}')
 ejey_aux = np.linspace(np.min([np.min(listy_im_x),np.min(listy_im_z)]), np.max([np.max(listy_im_x),np.max(listy_im_z)]) , 10)
 for ind in list_ind2:
     plt.plot(listx[ind]*np.ones(10), ejey_aux,'--',color = 'grey' )

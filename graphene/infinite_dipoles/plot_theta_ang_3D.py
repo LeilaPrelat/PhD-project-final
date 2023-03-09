@@ -254,7 +254,7 @@ list_omega_omegaD = np.array(list_EmeV)*1e-3/omega_D ## sin el hbar porque se ca
 list_omegac = np.array(list_EmeV)*1e-3/(hb*c)
 list_a_omega_v = np.array(list_a_micros)*np.array(list_omegac)*int_v    
 
-labelz = r'$\theta_n$' +  '(' + u"\N{DEGREE SIGN}" + ')'
+labelz = r'$\theta_%i$' %(Nmax) +  '(' + u"\N{DEGREE SIGN}" + ')'
 
 
 limits = [np.min(list_omega_omegaD) , np.max(list_omega_omegaD), np.min(list_a_omega_v) , np.max(list_a_omega_v)]
