@@ -174,11 +174,12 @@ elif Nmax == 1:
     list_a_micros = np.array(np.linspace(3000,10500,N2))*1e-3
     list_a_micros = np.array(np.linspace(3500,5000,N2))*1e-3
 
-#
-#    list_EmeV = np.linspace(40,76,N2)
-#    list_a_micros = np.array(np.linspace(2000,10500,N2))*1e-3
 
-#    list_EmeV = listx
+
+    list_EmeV = np.linspace(50,100,N2)
+    list_a_micros = np.array(np.linspace(3000,10500,N2))*1e-3
+    list_a_micros = np.array(np.linspace(1500,7000,N2))*1e-3
+
 elif Nmax == 0:
     list_EmeV = np.linspace(30,50,N2)
     list_EmeV = listx
@@ -288,7 +289,7 @@ for tt in ticks:
 
 n_color = 21
 # define the bins and normalize
-bounds = np.linspace(np.min(Z_num), np.max(Z_num), n_color)
+bounds = np.linspace(np.min(Z_num)*0.96, np.max(Z_num)*0.98, n_color)
 
 norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
 

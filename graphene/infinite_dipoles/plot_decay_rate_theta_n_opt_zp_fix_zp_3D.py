@@ -30,9 +30,10 @@ if not os.path.exists(path_save):
 err = 'decay_rate_theta_n.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_theta_n import decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v4
+    from decay_rate_theta_n import decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v2, decay_rate_theta_inf_dipoles_ana_res_div_gamma0
 except ModuleNotFoundError:
     print(err)
+
 
 
 try:
@@ -60,7 +61,7 @@ int_v = 10
 
 Nmax = 1
 
-labelz = r'$\Gamma_{\text{SP}, n}/\Gamma_{\rm EELS}$'
+labelz = r'log($\Gamma_{{\rm SP},%i}/\Gamma_{\rm EELS}$)' %(Nmax)
 
 tabla = np.loadtxt('zp_optimum_for_decay_rate_graphene_resonance_b-10nm.txt', delimiter='\t', skiprows=1)
 tabla = np.transpose(tabla)
@@ -104,9 +105,9 @@ elif Nmax == 1:
     list_EmeV = np.linspace(30,100,N)
     list_EmeV = np.linspace(48,76,N)
 
-    list_EmeV = np.linspace(64,67,N)
+    list_EmeV = np.linspace(50,100,N)
     list_a_micros = np.array(np.linspace(3000,10500,N))*1e-3
-    list_a_micros = np.array(np.linspace(3500,4200,N))*1e-3
+    list_a_micros = np.array(np.linspace(1500,7000,N))*1e-3
 
 #    list_EmeV = listx
 elif Nmax == 0:
@@ -129,10 +130,10 @@ def function_real_ana(energy0_meV,a_micros):
     a = a_micros
     zp = zp_nano*1e-3
          
-    rta = decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v4(omegac0,epsi1,epsi2,hbmu,hbgama,int_v,zp,a,b,Nmax)
+    rta = decay_rate_theta_inf_dipoles_ana_res_div_gamma0(omegac0,epsi1,epsi2,hbmu,hbgama,int_v,zp,a,b,Nmax)
 
     print(rta)
-    return np.real(rta )
+    return np.real(np.log10(rta) )
 
 #%%
 
@@ -230,7 +231,7 @@ cbar = plt.colorbar(im, fraction=0.046, pad=0.04, orientation = 'vertical')
 
 #ax2 = fig.add_axes([0.95, 0.1, 0.03, 0.8])
 #cb = plt.colorbar.ColorbarBase(ax2, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds, format='%1i')
-plt.xticks(ticks_x)
+#plt.xticks(ticks_x)
 cbar.ax.tick_params(labelsize = tamnum, width=0.5, length = 0,pad = 1.5)
 
 #plt.plot(list_omega_omegaD_lim,listy_2,'-',color = 'blue')
