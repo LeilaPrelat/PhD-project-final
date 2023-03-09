@@ -70,13 +70,13 @@ d_thickness_disk_nano = 0.9
 
 labely = r'$\Gamma_{\rm SP, n}/\Gamma_{\rm EELS}$'
 #labely = r'Emission probability (eV$^{-1}$)'
-labelp = r'_dfilm%.1fnm_ddisk%.1fnm_v%i' %(d_nano_film,d_thickness_disk_nano,int_v)
+labelp = r'_dfilm%.2fnm_ddisk%.2fnm_v%i' %(d_nano_film,d_thickness_disk_nano,int_v)
 tabla = np.loadtxt('zp_optimum_for_decay_rate_hBN_disks' + labelp + '.txt', delimiter='\t', skiprows=1)
 tabla = np.transpose(tabla)
 [listx,listy,listz] = tabla
 
 zp_nano = listy[-20]
-zp_nano = 3.5
+#zp_nano = 3.5
 #zp_nano = 50
 #zp_nano = listy[-20]
 omegac0_1 = np.max(listx)/(c*hb)
@@ -90,8 +90,8 @@ a_min = np.real(lambda_SP_1)*Nmax/(int_v - 1)
 a_max = np.real(lambda_SP_2)*Nmax/(int_v + 1)
 
 a = np.mean([a_min,a_max])
-a = 0.001*1e-3
-a = 120*1e-3
+#a = 0.001*1e-3
+#a = 120*1e-3
 #a = 5*1e-3
 
 #a = 150*1e-3
@@ -123,7 +123,7 @@ labelp = r'_a%.2fnm_zp%.2fnm_d%.2fnm' %(a*1e3,zp_nano,d_nano_film)
 f1 = interp1d(listx, listy)
 f2 = interp1d(listx, listz)
 
-N = 200
+N = 100
 lim1,lim2 = 18,-60
 lim1,lim2 = 0,-58
 #lim1,lim2 = 14,-1
