@@ -222,7 +222,7 @@ if Nmax == 1:
     
 # define the bins and normalize
 bounds = np.linspace(np.min(Z_num), np.max(Z_num), n_color)
-
+ticks_z = np.linspace(np.min(Z_num), np.max(Z_num)+0.1, n_color)
 norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
 
 im = plt.imshow(Z_num, extent = limits, cmap=cmap, aspect='auto', interpolation = 'none',origin = 'lower', norm=norm) 
@@ -232,6 +232,7 @@ cbar = plt.colorbar(im, fraction=0.046, pad=0.04, orientation = 'vertical')
 #ax2 = fig.add_axes([0.95, 0.1, 0.03, 0.8])
 #cb = plt.colorbar.ColorbarBase(ax2, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds, format='%1i')
 #plt.xticks(ticks_x)
+cbar.ax.set_yticks(ticks_z)
 cbar.ax.tick_params(labelsize = tamnum, width=0.5, length = 0,pad = 1.5)
 
 #plt.plot(list_omega_omegaD_lim,listy_2,'-',color = 'blue')

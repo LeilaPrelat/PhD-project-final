@@ -30,7 +30,7 @@ if not os.path.exists(path_save):
 err = 'decay_rate_theta_n.py no se encuentra en ' + path_basic
 try:
     sys.path.insert(1, path_basic)
-    from decay_rate_theta_n_res import decay_rate_theta_inf_dipoles_ana_res,decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3
+    from decay_rate_theta_n import decay_rate_theta_inf_dipoles_ana_div_gamma0
 except ModuleNotFoundError:
     print(err)
 
@@ -65,13 +65,13 @@ b = - 0.01
 d_nano_film = 1
 
 D_disk_nano = 100
-d_thickness_disk_nano = 1
+d_thickness_disk_nano = 0.9
 
 
 labely = r'$\Gamma_{\rm SP, n}/\Gamma_{\rm EELS}$'
 #labely = r'Emission probability (eV$^{-1}$)'
 labelp = r'_dfilm%.1fnm_ddisk%.1fnm_v%i' %(d_nano_film,d_thickness_disk_nano,int_v)
-tabla = np.loadtxt('zp_optimum_for_decay_rate_hBN_disks_resonance' + labelp + '.txt', delimiter='\t', skiprows=1)
+tabla = np.loadtxt('zp_optimum_for_decay_rate_hBN_disks' + labelp + '.txt', delimiter='\t', skiprows=1)
 tabla = np.transpose(tabla)
 [listx,listy,listz] = tabla
 
@@ -123,7 +123,7 @@ labelp = r'_a%.2fnm_zp%.2fnm_d%.2fnm' %(a*1e3,zp_nano,d_nano_film)
 f1 = interp1d(listx, listy)
 f2 = interp1d(listx, listz)
 
-N = 225
+N = 200
 lim1,lim2 = 18,-60
 lim1,lim2 = 0,-58
 #lim1,lim2 = 14,-1
@@ -160,8 +160,8 @@ def function_real_ana(energy0_meV,zp_nano,n):
     omegac0 = energy0_meV/(c*hb)  
     zp = zp_nano*1e-3
          
-    rta = decay_rate_theta_inf_dipoles_ana_res_div_gamma0_v3(omegac0,epsilon_Silica,d_nano_film,d_thickness_disk_nano,D_disk_nano,int_v,zp,a,b,n)
-
+    rta = decay_rate_theta_inf_dipoles_ana_div_gamma0(omegac0,epsilon_Silica,d_nano_film,d_thickness_disk_nano,D_disk_nano,int_v,zp,a,b,n)
+                                                   
     return rta
 
 
