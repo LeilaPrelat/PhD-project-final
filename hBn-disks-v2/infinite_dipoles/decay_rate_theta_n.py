@@ -15,7 +15,7 @@ from scipy import special
 name_this_py = os.path.basename(__file__)
 path = os.path.abspath(__file__) #path absoluto del .py actual
 path_basic = path.replace('/' + name_this_py,'')
-path_constants =  path_basic.replace('/potential_field/infinite_dipoles','')
+path_constants =  path_basic.replace('/infinite_dipoles','')
 #print('Importar modulos necesarios para este codigo')
 
 try:
@@ -113,7 +113,7 @@ def decay_rate_theta_inf_dipoles_ana_div_gamma0(omegac,epsi_silica,d_nano_film,d
        
     Gamma_SPn = a*epsi_silica(E)*np.abs(phi_n)**2/(np.pi*np.abs(Rp)*seno_theta_n*4*np.pi**2*v**2)
     
-    return Gamma_SPn*5*1e9/Gamma_EELS
+    return Gamma_SPn*1e9*1e3/Gamma_EELS
 
 
 

@@ -15,7 +15,7 @@ from scipy import special
 name_this_py = os.path.basename(__file__)
 path = os.path.abspath(__file__) #path absoluto del .py actual
 path_basic = path.replace('/' + name_this_py,'')
-path_constants =  path_basic.replace('/potential_field/infinite_dipoles','')
+path_constants =  path_basic.replace('/infinite_dipoles','')
 #print('Importar modulos necesarios para este codigo')
 
 try:
