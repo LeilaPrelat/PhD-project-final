@@ -264,6 +264,7 @@ plt.tight_layout()
 
 #plt.xlim([0,200])
 os.chdir(path_save)
+#plt.yscale('log')
 plt.savefig('decay_rate_fix_zp_' + labelp + '.png', format='png',bbox_inches='tight',pad_inches = 0.008,dpi = dpi)
 
 
