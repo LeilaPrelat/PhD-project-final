@@ -34,7 +34,13 @@ try:
 except ModuleNotFoundError:
     print(err)
 
+try:
+    sys.path.insert(1, path_constants)
+    from graphene_sigma import sigma_DL
+except ModuleNotFoundError:
+    print('graphene_sigma.py no se encuentra en ' + path_basic)
 
+    
 try:
     sys.path.insert(1, path_constants)
     from constants import constantes
@@ -168,7 +174,24 @@ def function_real_ana(energy0_meV,zp_nano,Nmax):
 
     return rta
 
+def theta(E_meV,a_micros):
+    
 
+    E = E_meV*1e-3  
+    cond = 4*np.pi*alfac*sigma_DL(E,hbmu,hbgama)
+    alfa_p = 1j*(epsi1 + epsi2)/(cond)
+    omegac = E/(hb*c)
+    kp = alfa_p*omegac    
+    
+    a = a_micros
+    
+    theta0 = np.arccos((omegac*int_v - 2*np.pi*Nmax/a)/np.real(kp))
+#    print(theta0)
+    return theta0*180/np.pi
+
+
+#%%
+    
 tamfig = [2.5, 2]
 tamletra = 9
 tamtitle  = 9
@@ -265,30 +288,67 @@ for n in list_n:
 plt.legend(loc = 'best',markerscale=mk,fontsize=tamlegend,frameon=False,handletextpad=hp, handlelength=1)
 #    plt.grid(1)
 plt.tight_layout()
-    
-graph(title,labelx,labely ,tamfig,tamtitle,tamletra,tamnum,labelpadx,labelpady,pad)
+
+
+#%%
+
+list_y_re_tot = []
+maxis_ind = []  ## i used this to find listx_pos and listy_pos
+values_angle = []
+
 for n in list_n:
     
     list_y_re = []
-
-
+    
     for ind in range(len(listx_2)):
 #        zp = listy_2[ind]
         x =  listx_2[ind]
 #        x = 43 #meV
         list_y_re.append(function_real_ana(x,zp_nano,n))
-            
-    listx_3 = np.array(listy_2)/np.array(listz_2)
-    plt.plot(listx_4,np.array(list_y_re),'-',ms = ms, label = 'n = %i'%(n))
+        
+    list_y_re_tot.append(list_y_re)
+    
+    ind_max = np.argmax(list_y_re)
+    maxis_ind.append(int(ind_max))
+    values_angle.append(theta(listx_2[int(ind_max)],a))
+ 
+#%%
+#print(values_angle)
+values_angle = sorted(values_angle)
+values_angle = np.array(values_angle[::-1])
+
+#%%
+
+list_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728',
+              '#9467bd', '#8c564b', '#e377c2', '#7f7f7f',
+              '#bcbd22', '#17becf']
+
+listx_pos = [0.619 , 0.648 , 0.671 , 0.691 , 0.71 ]
+listy_pos = [0.106 , 0.0319 , 0.022 , 0.0169 , 0.0138]
+
+fig = plt.figure(figsize=tamfig)
+ax = fig.add_subplot(111)
+plt.xlabel(labelx,fontsize=tamletra,labelpad =labelpadx)
+plt.ylabel(labely,fontsize=tamletra,labelpad =labelpady)
+plt.tick_params(labelsize = tamnum, length = 2 , width=1, direction="in", pad = pad)
+for k in range(len(list_y_re_tot)) :
+    plt.plot(listx_4,list_y_re_tot[k],'-',color = list_colors[k],ms = ms, label = 'n = %i'%(k))
+    
+    x,y = listx_pos[k] , listy_pos[k]
+
+    plt.text(x,y,r'%.1f' %(values_angle[k]) + u"\N{DEGREE SIGN}",color = list_colors[k],fontsize=tamlegend)
     
 plt.legend(loc = 'best',markerscale=mk,fontsize=tamlegend,frameon=False,handletextpad=hp, handlelength=1)
 #    plt.grid(1)
 plt.tight_layout()
+plt.ylim(-0.003, np.max(list_y_re_tot[0]) + 0.016)
 
 #plt.yscale('log')
 os.chdir(path_save)
 #plt.savefig('decay_rate_fix_zp_' + labelp + '.png', format='png',bbox_inches='tight',pad_inches = 0.008,dpi = dpi)
 plt.savefig('decay_rate_fix_zp_' + labelp + '.png', format='png',bbox_inches='tight',pad_inches = 0.008,dpi = dpi)
+
+
 
 #%%
 
